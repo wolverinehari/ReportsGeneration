@@ -7,21 +7,27 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { InputBoxComponent } from './input-box/input-box.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
-
+import { DemoMaterialModule } from './app.materialmodule';
+import { ReportstableComponent } from './reportstable/reportstable.component';
+import { TabsectionComponent } from './tabsection/tabsection.component';
+import {ReportsdataserviceService} from './reportsdataservice.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     InputBoxComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    ReportstableComponent,
+    TabsectionComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DemoMaterialModule
   ],
-  providers: [],
+  providers: [ReportsdataserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
