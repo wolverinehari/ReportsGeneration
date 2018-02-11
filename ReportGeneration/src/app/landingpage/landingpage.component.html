@@ -1,3 +1,33 @@
-<p>
-  landingpage works!
-</p>
+<div class="row">
+  <div class="col-lg-4">
+     <button type="button" class="btn btn-default" *ngIf="selectedlogindata.action=='default1'?true:false" (click)="navigationCheck()">Default 1</button>
+     <button type="button" class="btn btn-default" *ngIf="selectedlogindata.action!='default1'?true:false" disabled (click)="navigationCheck()">Default 1</button>
+     
+  </div>
+  <div class="col-lg-4">
+       <button type="button" *ngIf="selectedlogindata.action=='default2'?true:false" class="btn btn-default">Default 2</button>
+       <button type="button" *ngIf="selectedlogindata.action!='default2'?true:false"  disabled class="btn btn-default">Default 2</button>
+       
+  </div>
+  <div class="col-lg-4">
+       <button type="button" *ngIf="selectedlogindata.action=='default3'?true:false" class="btn btn-default">Default 3</button>
+       <button type="button" *ngIf="selectedlogindata.action!='default3'?true:false" disabled class="btn btn-default">Default 3</button>
+ </div>
+</div>
+<div class="row">
+  <div class="col-lg-4">
+       <button type="button" *ngIf="selectedlogindata.action=='default4'?true:false" class="btn btn-default">Default 4</button>
+       <button type="button" *ngIf="selectedlogindata.action!='default4'?true:false" disabled class="btn btn-default">Default 4</button>
+       
+  </div>
+  <div class="col-lg-4">
+       <button type="button" *ngIf="selectedlogindata.action=='default5'?true:false" class="btn btn-default">Default 5</button>
+       <button type="button" *ngIf="selectedlogindata.action!='default5'?true:false" disabled class="btn btn-default">Default 5</button>
+       
+  </div>
+  <div class="col-lg-4">
+       <button type="button" *ngIf="selectedlogindata.action=='default6'?true:false" class="btn btn-default">Default 6</button>
+       <button type="button" *ngIf="selectedlogindata.action!='default6'?true:false" disabled class="btn btn-default">Default 6</button>
+       
+  </div>
+</div>

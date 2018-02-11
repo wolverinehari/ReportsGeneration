@@ -7,6 +7,11 @@
       <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="readonly">
+      <mat-header-cell *matHeaderCellDef> Read only </mat-header-cell>
+      <mat-cell *matCellDef="let element">   <input type="checkbox"  [(ngModel)]="element.readonly" name="readonly" ></mat-cell>
+    </ng-container>
+
     <!-- Name Column -->
     <ng-container matColumnDef="Interview date">
       <mat-header-cell *matHeaderCellDef> Title 2</mat-header-cell>
@@ -32,6 +37,11 @@
     <ng-container matColumnDef="Edit sec">
       <mat-header-cell *matHeaderCellDef>Download Option</mat-header-cell>
       <mat-cell *matCellDef="let element">
+         <select class="form-control" id="downloadoptions">
+              <option>PDF</option>
+              <option>Excel</option>
+              <option>Docs</option>
+          </select>
       </mat-cell>
     </ng-container>
 

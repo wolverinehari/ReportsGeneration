@@ -1,0 +1,7 @@
+.landingpage .col-lg-4{
+    text-align: center;
+    margin: 40px 0px;
+}
+.landingpage .col-lg-4 .btn-default{
+    padding: 50px
+}

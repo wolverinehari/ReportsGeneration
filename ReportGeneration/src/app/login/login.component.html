@@ -7,15 +7,18 @@
       <div class="col-lg-3">
       </div>
       <div class="col-lg-6">
-        <app-input-box [label]="'User name:'" [id]="'uname'" [type]="'text'"></app-input-box>
-        <app-input-box [label]="'Passowrd:'" [id]="'pword'" [type]="'password'"></app-input-box>
+        <app-input-box #username [label]="'User name:'" [id]="'username'" [type]="'text'" (ivaluechange)='valuechange($event)' [ivalue]='logindata.username'></app-input-box>
+        <app-input-box #password [label]="'Passowrd:'" [id]="'password'" [type]="'password'" (ivaluechange)='valuechange($event)' [ivalue]='logindata.password'></app-input-box>
+        <div *ngIf="isError" class="panel panel-danger">
+          <div class="panel-heading">Login Failed. Username or Passowrd wrong!.</div>
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-5">
       </div>
       <div class="col-lg-6 topPadding">
-        <button type="button" class="btn btn-primary" (click)="loginData()">Login</button>
+        <button type="button" class="btn btn-primary" (click)="loginData(logindata)">Login</button>
         <button type="button" class="btn btn-default">Register</button>
       </div>
     </div>

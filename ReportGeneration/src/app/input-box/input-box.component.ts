@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component,EventEmitter, OnInit,Input,Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-box',
@@ -10,11 +10,15 @@ export class InputBoxComponent implements OnInit {
   @Input() id:string;
   @Input() type:string;
   @Input() ivalue:string;
-  
+  @Output() ivaluechange=new EventEmitter();
   constructor() {
     
    }
-
+   change(event){
+    var obj={};
+    obj[event.currentTarget.id]=this.ivalue
+    this.ivaluechange.emit(obj)
+  }
   ngOnInit() {
   }
   

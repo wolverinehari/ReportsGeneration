@@ -12,6 +12,8 @@ import { DemoMaterialModule } from './app.materialmodule';
 import { ReportstableComponent } from './reportstable/reportstable.component';
 import { TabsectionComponent } from './tabsection/tabsection.component';
 import {ReportsdataserviceService} from './reportsdataservice.service';
+import { HeaderComponent } from './header/header.component';
+import { LoginDataService } from './login-data.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {ReportsdataserviceService} from './reportsdataservice.service';
     InputBoxComponent,
     LandingpageComponent,
     ReportstableComponent,
-    TabsectionComponent
+    TabsectionComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import {ReportsdataserviceService} from './reportsdataservice.service';
     DemoMaterialModule,
     BrowserAnimationsModule
   ],
-  providers: [ReportsdataserviceService],
+  providers: [ReportsdataserviceService, LoginDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
