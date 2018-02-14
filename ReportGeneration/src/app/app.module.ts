@@ -14,6 +14,7 @@ import { TabsectionComponent } from './tabsection/tabsection.component';
 import {ReportsdataserviceService} from './reportsdataservice.service';
 import { HeaderComponent } from './header/header.component';
 import { LoginDataService } from './login-data.service';
+import { DataTableComponent } from './data-table/data-table.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoginDataService } from './login-data.service';
     LandingpageComponent,
     ReportstableComponent,
     TabsectionComponent,
-    HeaderComponent
+    HeaderComponent,
+    DataTableComponent
   ],
   imports: [
     BrowserModule,

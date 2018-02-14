@@ -1,0 +1,49 @@
+<div class="row">
+<div class="col-lg-12">
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [(dataSource)]="dataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Interview date">
+      <mat-header-cell *matHeaderCellDef> Title 2</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.interviewdate}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Interview time">
+      <mat-header-cell *matHeaderCellDef> Title 3 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.interviewtime}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Interview type">
+      <mat-header-cell *matHeaderCellDef> Title 4 </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.interviewtype}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Primary interviewer">
+      <mat-header-cell *matHeaderCellDef> Title 5</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.primaryinterviewer}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="comments">
+      <mat-header-cell *matHeaderCellDef>Comments</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <textarea class="form-control" rows="5" id="comment" disabled>{{element.comments}}</textarea>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayColumnHeader"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayColumnHeader;"></mat-row>
+  </mat-table>
+
+  <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+  </mat-paginator>
+</div>
+</div>
+</div>

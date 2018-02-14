@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { tableData } from './reportTableData';
-import {reportTableData,loginContent} from './mockData'
+import { tableData,datatableData } from './reportTableData';
+import {reportTableData,loginContent,dataTableData} from './mockData'
 
 @Injectable()
 export class ReportsdataserviceService {
   alltabledataObject:tableData[]=reportTableData;
-  loginData:any=loginContent;
+  allDatatableObject:datatableData[]=dataTableData;
+ loginData:any=loginContent;
   selectedlogin:any=[{
     username:'user1',
     password:'user1',
@@ -14,6 +15,10 @@ export class ReportsdataserviceService {
   constructor() { }
   getTables(): tableData[] {
     return this.alltabledataObject;
+  } 
+  getDataTables(index): datatableData[] {
+    var copyArray=Object.assign(this.allDatatableObject);
+    return copyArray.splice(index*4,4);
   } 
   checkvalidLogin(data:any):any{
     this.selectedlogin=this.loginData.filter(item=>item.username==data.username && item.password==data.password)
