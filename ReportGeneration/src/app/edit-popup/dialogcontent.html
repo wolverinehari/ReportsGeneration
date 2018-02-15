@@ -16,11 +16,7 @@
     <div class="col-lg-8">
       <div class="form-group">
         <label for="">Interview date:</label>
-          <mat-form-field>
-            <input  [(ngModel)]="data.interviewdate" matInput [matDatepicker]="picker" placeholder="Interview Date">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-           </mat-form-field>
+        <input type="text" class="form-control" id="modalid" [(ngModel)]="data.interviewdate">
       </div>
     </div>
   </div>

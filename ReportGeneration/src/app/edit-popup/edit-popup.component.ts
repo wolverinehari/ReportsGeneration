@@ -39,7 +39,7 @@ export class EditPopupComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (!!result) {
-        result.interviewdate = !!result.interviewdate? (result.interviewdate.getMonth() + 1) + '/' + result.interviewdate.getDate() + '/' + result.interviewdate.getFullYear():'Date issue';//new Date(result.interviewdate.getMonth()+''+result.interviewdate.getDate(),result.interviewdate.getFullYear())
+        //result.interviewdate = !!result.interviewdate? (result.interviewdate.getMonth() + 1) + '/' + result.interviewdate.getDate() + '/' + result.interviewdate.getFullYear():'Date issue';//new Date(result.interviewdate.getMonth()+''+result.interviewdate.getDate(),result.interviewdate.getFullYear())
         this.tableContentStatusChange.emit(result);
       }
     });
