@@ -4,7 +4,9 @@
       interviewdate: '12/19/2017',
       interviewtime: '8.30AM',
       interviewtype: 'Telephonic',
-      primaryinterviewer: 'Ajith'
+      primaryinterviewer: 'Ajith',
+      comments: ''
+      
     },
     {
       id: 2,
@@ -12,7 +14,8 @@
       interviewdate: '01/19/2018',
       interviewtime: '9.30AM',
       interviewtype: 'Skype',
-      primaryinterviewer: 'Vijay'
+      primaryinterviewer: 'Vijay',
+      comments: ''      
     },
     {
       id: 3,
@@ -20,7 +23,8 @@
       interviewdate: '01/06/2018',
       interviewtime: '11.30AM',
       interviewtype: 'Direct',
-      primaryinterviewer: 'Rajini'
+      primaryinterviewer: 'Rajini',
+      comments: ''      
     },
     {
       id: 4,
@@ -28,7 +32,8 @@
       interviewdate: '01/09/2018',
       interviewtime: '9.40AM',
       interviewtype: 'Skype',
-      primaryinterviewer: 'Kamal'
+      primaryinterviewer: 'Kamal',
+      comments: ''      
     }
   ]
 

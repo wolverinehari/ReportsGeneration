@@ -1,8 +1,8 @@
   <ul class="nav nav-tabs">
-    <li class="active" (click)="tablick(1)"><a href="javascript:void()">Home</a></li>
-    <li (click)="tablick(2)"><a href="javascript:void(0)">Option 1</a></li>
-    <li (click)="tablick(3)"><a href="javascript:void(0)">Option 2</a></li>
-    <li (click)="tablick(4)"><a href="javascript:void(0)">Option 3</a></li>
+    <li [ngClass]="{'active' : indexVal==0}" (click)="tablick(1)"><a href="javascript:void(0)">Home</a></li>
+    <li [ngClass]="{'active' : indexVal==1}" (click)="tablick(2)"><a href="javascript:void(0)">Option 1</a></li>
+    <li  [ngClass]="{'active' : indexVal==2}" (click)="tablick(3)"><a href="javascript:void(0)">Option 2</a></li>
+    <li  [ngClass]="{'active' : indexVal==3}" (click)="tablick(4)"><a href="javascript:void(0)">Option 3</a></li>
   </ul>
  <app-reportstable *ngIf="isreportTable"></app-reportstable>
- <app-data-table *ngIf="!isreportTable" [indexVal]="indexVal"></app-data-table>
+ <app-data-table *ngIf="!isreportTable" [indexVal]="indexVal">{{indexVal}}</app-data-table>

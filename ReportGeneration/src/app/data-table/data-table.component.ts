@@ -16,6 +16,7 @@ export class DataTableComponent implements OnInit {
     this.dataSource = new MatTableDataSource<datatableData>(this.dataObject);
   }
   ngOnInit() {
+    console.log(this.indexVal);
   }
   displayColumnHeader = ['id','Interview date', 'Interview time', 'Interview type', 'Primary interviewer', 'comments'];
   @ViewChild(MatPaginator) paginator: MatPaginator;

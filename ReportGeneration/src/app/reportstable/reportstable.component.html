@@ -11,7 +11,7 @@
 
     <ng-container matColumnDef="readonly">
       <mat-header-cell *matHeaderCellDef> Read only </mat-header-cell>
-      <mat-cell *matCellDef="let element">   <input type="checkbox"  [(ngModel)]="element.readonly" name="readonly" ></mat-cell>
+      <mat-cell *matCellDef="let element"><app-edit-popup [itemid]="element.id" [tableContent]="dataSource" (tableContentStatusChange)='tableContentStatusChange(event)'></app-edit-popup></mat-cell>
     </ng-container>
 
     <!-- Name Column -->
@@ -37,14 +37,16 @@
       <mat-cell *matCellDef="let element"> {{element.primaryinterviewer}} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="Edit sec">
-      <mat-header-cell *matHeaderCellDef>Download Option</mat-header-cell>
-      <mat-cell *matCellDef="let element">
-         <select class="form-control" id="downloadoptions">
+      <mat-header-cell *matHeaderCellDef>Download Option 
+        <select class="form-control" id="downloadoptions">
               <option>PDF</option>
               <option>Excel</option>
               <option>Docs</option>
           </select>
-      </mat-cell>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <textarea class="form-control" rows="5" id="comment" disabled>{{element.comments}}</textarea>
+     </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayColumnHeader"></mat-header-row>

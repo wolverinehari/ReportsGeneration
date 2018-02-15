@@ -17,6 +17,8 @@ export class ReportstableComponent implements OnInit {
   }
   ngOnInit() {
   }
+  tableContentStatusChange(data:any){
+  }
   displayColumnHeader = ['id','readonly' ,'Interview date', 'Interview time', 'Interview type', 'Primary interviewer', 'Edit sec'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   ngAfterViewInit() {

@@ -17,7 +17,7 @@ export class ReportsdataserviceService {
     return this.alltabledataObject;
   } 
   getDataTables(index): datatableData[] {
-    var copyArray=Object.assign(this.allDatatableObject);
+    var copyArray=Object.assign([],this.allDatatableObject);
     return copyArray.splice(index*4,4);
   } 
   checkvalidLogin(data:any):any{

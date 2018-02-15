@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabsectionComponent implements OnInit {
   isreportTable:boolean=true;
-  indexVal:number;
+  indexVal:number=0;
+  dataObject:any={
+    "indexVal":0
+  }
   constructor() { }
   ngOnInit() {
   }
@@ -15,6 +18,7 @@ export class TabsectionComponent implements OnInit {
     switch(id){
       case 1:
         this.isreportTable=true
+        this.indexVal=0;
       break;
       case 2:
         this.isreportTable=false;
@@ -29,5 +33,7 @@ export class TabsectionComponent implements OnInit {
         this.indexVal=3;
       break;
     }
+    this.dataObject.indexVal=this.indexVal
+    console.log(this.indexVal)
   }
 }

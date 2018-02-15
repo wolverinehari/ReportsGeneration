@@ -1,0 +1,72 @@
+<h1 mat-dialog-title>Table Data</h1>
+<div mat-dialog-content>
+  <div class="row">
+    <div class="col-lg-2">
+    </div>
+    <div class="col-lg-8">
+      <div class="form-group">
+        <label for="">ID</label>
+        <input type="text" class="form-control" id="modalid" [(ngModel)]="data.id">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2">
+    </div>
+    <div class="col-lg-8">
+      <div class="form-group">
+        <label for="">Interview date:</label>
+          <mat-form-field>
+            <input  [(ngModel)]="data.interviewdate" matInput [matDatepicker]="picker" placeholder="Interview Date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+           </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2">
+    </div>
+    <div class="col-lg-8">
+      <div class="form-group">
+        <label for="">Interview time:</label>
+        <input type="text" class="form-control" id="modalinterviewtime" [(ngModel)]="data.interviewtime">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2">
+    </div>
+    <div class="col-lg-8">
+      <div *ngIf="interviewtype" class="form-group">
+        <label for="">Interview type:</label>
+        <input name="{{interviewtype.name}}" class="form-control" [(ngModel)]="data.interviewtype">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2">
+    </div>
+    <div class="col-lg-8">
+      <div class="form-group">
+        <label for="">Primary Interviewer:</label>
+        <input type="text" class="form-control" id="modalpinterviewer" [(ngModel)]="data.primaryinterviewer">
+      </div>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col-lg-2">
+    </div>
+    <div class="col-lg-8">
+      <div class="form-group">
+          <label for="">Comments:</label>
+          <textarea class="form-control" rows="5" id="comment"  [(ngModel)]="data.comments"></textarea>
+        </div>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <!--<button class="btn btn-primary"  [mat-dialog-close]="data.animal" cdkFocusInitial>Submit</button> &nbsp;&nbsp;-->
+  <button class="btn btn-primary" [mat-dialog-close]="data" cdkFocusInitial>Submit</button> &nbsp;&nbsp;
+  <button class="btn btn-default" (click)="onNoClick()">Cancel</button>
+</div>

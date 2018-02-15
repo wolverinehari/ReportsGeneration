@@ -15,6 +15,9 @@ import {ReportsdataserviceService} from './reportsdataservice.service';
 import { HeaderComponent } from './header/header.component';
 import { LoginDataService } from './login-data.service';
 import { DataTableComponent } from './data-table/data-table.component';
+import { EditPopupComponent } from './edit-popup/edit-popup.component';
+import {Dialogcontent} from './edit-popup/dialogcontent';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { DataTableComponent } from './data-table/data-table.component';
     ReportstableComponent,
     TabsectionComponent,
     HeaderComponent,
-    DataTableComponent
+    DataTableComponent,
+    EditPopupComponent,
+    Dialogcontent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +39,7 @@ import { DataTableComponent } from './data-table/data-table.component';
     DemoMaterialModule,
     BrowserAnimationsModule
   ],
+  entryComponents: [EditPopupComponent,Dialogcontent],
   providers: [ReportsdataserviceService, LoginDataService],
   bootstrap: [AppComponent]
 })
