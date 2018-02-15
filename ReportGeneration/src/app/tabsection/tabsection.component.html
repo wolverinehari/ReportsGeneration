@@ -5,4 +5,6 @@
     <li  [ngClass]="{'active' : indexVal==3}" (click)="tablick(4)"><a href="javascript:void(0)">Option 3</a></li>
   </ul>
  <app-reportstable *ngIf="isreportTable"></app-reportstable>
- <app-data-table *ngIf="!isreportTable" [indexVal]="indexVal">{{indexVal}}</app-data-table>
+ <app-data-table *ngIf="!isreportTable && indexVal==1" [indexVal]="indexVal">{{indexVal}}</app-data-table>
+ <app-data-table *ngIf="!isreportTable && indexVal==2" [indexVal]="indexVal">{{indexVal}}</app-data-table>
+ <app-data-table *ngIf="!isreportTable && indexVal==3" [indexVal]="indexVal">{{indexVal}}</app-data-table>

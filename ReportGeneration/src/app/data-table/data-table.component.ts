@@ -11,12 +11,12 @@ export class DataTableComponent implements OnInit {
   @Input() indexVal;
   dataObject: datatableData[];
   dataSource:any;
-  constructor(constantdataService: ReportsdataserviceService) {
-    this.dataObject = constantdataService.getDataTables(this.indexVal);
-    this.dataSource = new MatTableDataSource<datatableData>(this.dataObject);
+  constructor(private constantdataService: ReportsdataserviceService) {
+   
   }
   ngOnInit() {
-    console.log(this.indexVal);
+    this.dataObject = this.constantdataService.getDataTables(this.indexVal);
+    this.dataSource = new MatTableDataSource<datatableData>(this.dataObject);
   }
   displayColumnHeader = ['id','Interview date', 'Interview time', 'Interview type', 'Primary interviewer', 'comments'];
   @ViewChild(MatPaginator) paginator: MatPaginator;

@@ -63,7 +63,6 @@
     },
     {
       id: 4,
-      readonly:false,      
       interviewdate: '01/09/2018',
       interviewtime: '9.40AM',
       interviewtype: 'Skype',
@@ -72,7 +71,6 @@
     },
     {
       id: 5,
-      readonly:false,      
       interviewdate: '01/09/2018',
       interviewtime: '9.40AM',
       interviewtype: 'Skype',
@@ -140,12 +138,12 @@
   export let loginContent=[{
     username:'user1',
     password:'user1',
-    action:'default1'
+    action:'default1,default3'
   },
   {
     username:'user2',
     password:'user2',
-    action:'default2'
+    action:'default2,default6'
   },
   {
     username:'user3',

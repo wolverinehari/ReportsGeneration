@@ -9,7 +9,7 @@ export class TabsectionComponent implements OnInit {
   isreportTable:boolean=true;
   indexVal:number=0;
   dataObject:any={
-    "indexVal":0
+    indexVal:0
   }
   constructor() { }
   ngOnInit() {

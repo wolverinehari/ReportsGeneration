@@ -18,7 +18,7 @@ export class ReportsdataserviceService {
   } 
   getDataTables(index): datatableData[] {
     var copyArray=Object.assign([],this.allDatatableObject);
-    return copyArray.splice(index*4,4);
+    return copyArray.splice((index-1)*4,4);
   } 
   checkvalidLogin(data:any):any{
     this.selectedlogin=this.loginData.filter(item=>item.username==data.username && item.password==data.password)
