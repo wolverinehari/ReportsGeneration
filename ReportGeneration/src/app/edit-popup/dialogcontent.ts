@@ -7,13 +7,17 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 })
 export class Dialogcontent {
+    isError:boolean=false;
      constructor(public dialogRef: MatDialogRef<Dialogcontent>,@Inject(MAT_DIALOG_DATA) public data: any) { }
     onNoClick(): void {
         this.dialogRef.close();
     }
     onSubmitClick(data):void{
-        console.log(data);
-        this.dialogRef.close();
+        if(!!data.comments && data.comments.length>0){
+             this.dialogRef.close();
+        }else{
+            this.isError=true
+        }
    }
 
 }

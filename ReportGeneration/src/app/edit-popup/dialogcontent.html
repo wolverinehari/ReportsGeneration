@@ -55,7 +55,8 @@
     </div>
     <div class="col-lg-8">
       <div class="form-group">
-          <label for="">Comments:</label>
+          <label for="">Comments*:</label>
+          <span *ngIf="isError" class="required">Comments Required</span>
           <textarea class="form-control" rows="5" id="comment"  [(ngModel)]="data.comments"></textarea>
         </div>
     </div>
@@ -63,6 +64,6 @@
 </div>
 <div mat-dialog-actions>
   <!--<button class="btn btn-primary"  [mat-dialog-close]="data.animal" cdkFocusInitial>Submit</button> &nbsp;&nbsp;-->
-  <button class="btn btn-primary" [mat-dialog-close]="data" cdkFocusInitial>Submit</button> &nbsp;&nbsp;
+  <button class="btn btn-primary" (click)="onSubmitClick(data)"  cdkFocusInitial>Submit</button> &nbsp;&nbsp;
   <button class="btn btn-default" (click)="onNoClick()">Cancel</button>
 </div>
