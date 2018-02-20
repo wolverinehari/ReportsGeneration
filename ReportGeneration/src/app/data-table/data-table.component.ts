@@ -9,18 +9,22 @@ import {ReportsdataserviceService} from '../reportsdataservice.service';
 })
 export class DataTableComponent implements OnInit {
   @Input() indexVal;
-  dataObject: datatableData[];
+  dataObject:any[];
   dataSource:any;
   constructor(private constantdataService: ReportsdataserviceService) {
    
   }
   ngOnInit() {
-    this.dataObject = this.constantdataService.getDataTables(this.indexVal);
-    this.dataSource = new MatTableDataSource<datatableData>(this.dataObject);
+    this.constantdataService.getDataTables().subscribe(dataobj =>{
+      let copyArray = Object.assign([], dataobj);
+      this.dataObject = copyArray.splice((this.indexVal - 1) * 4, 4);
+      this.dataSource = new MatTableDataSource<datatableData>(this.dataObject);
+      this.dataSource.paginator = this.paginator;
+    });
   }
   displayColumnHeader = ['id','Interview date', 'Interview time', 'Interview type', 'Primary interviewer', 'comments'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+   // this.dataSource.paginator = this.paginator;
   }
 }

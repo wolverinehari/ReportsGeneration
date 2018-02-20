@@ -33,7 +33,6 @@ export class TabsectionComponent implements OnInit {
         this.indexVal=3;
       break;
     }
-    this.dataObject.indexVal=this.indexVal
-    console.log(this.indexVal)
+    this.dataObject.indexVal=this.indexVal;
   }
 }

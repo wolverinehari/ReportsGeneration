@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HttpClientModule }    from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -18,6 +19,8 @@ import { DataTableComponent } from './data-table/data-table.component';
 import { EditPopupComponent } from './edit-popup/edit-popup.component';
 import {Dialogcontent} from './edit-popup/dialogcontent';
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { LocaldatasericeService }  from './localdataserice.service';
 
 @NgModule({
   declarations: [
@@ -37,10 +40,14 @@ import {Dialogcontent} from './edit-popup/dialogcontent';
     FormsModule,
     AppRoutingModule,
     DemoMaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      LocaldatasericeService, { dataEncapsulation: false }
+    )
   ],
   entryComponents: [EditPopupComponent,Dialogcontent],
-  providers: [ReportsdataserviceService, LoginDataService],
+  providers: [ReportsdataserviceService, LoginDataService, LocaldatasericeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
