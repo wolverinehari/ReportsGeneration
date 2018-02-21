@@ -29,7 +29,7 @@ export class EditPopupComponent implements OnInit {
     var data;
     this.ischecked=false;
     if (!!this.itemid) {
-      data = this.tableContent.data.filter(item => item.id == this.itemid)[0]
+      data = this.tableContent.data.filter(item => item.report == this.itemid)[0]
     } else {
       data = this.dataObj;
     }

@@ -5,8 +5,8 @@
     </div>
     <div class="col-lg-8">
       <div class="form-group">
-        <label for="">ID</label>
-        <input type="text" class="form-control" id="modalid" [(ngModel)]="data.id">
+        <label for="">Report Name</label>
+        <input type="text" class="form-control" id="modalid" [(ngModel)]="data.reportname">
       </div>
     </div>
   </div>
@@ -15,8 +15,8 @@
     </div>
     <div class="col-lg-8">
       <div class="form-group">
-        <label for="">Interview date:</label>
-        <input type="text" class="form-control" id="modalid" [(ngModel)]="data.interviewdate">
+        <label for="">Report:</label>
+        <input type="text" class="form-control" id="modalid" [(ngModel)]="data.report">
       </div>
     </div>
   </div>
@@ -26,27 +26,7 @@
     <div class="col-lg-8">
       <div class="form-group">
         <label for="">Interview time:</label>
-        <input type="text" class="form-control" id="modalinterviewtime" [(ngModel)]="data.interviewtime">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-2">
-    </div>
-    <div class="col-lg-8">
-      <div *ngIf="interviewtype" class="form-group">
-        <label for="">Interview type:</label>
-        <input name="{{interviewtype.name}}" class="form-control" [(ngModel)]="data.interviewtype">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-2">
-    </div>
-    <div class="col-lg-8">
-      <div class="form-group">
-        <label for="">Primary Interviewer:</label>
-        <input type="text" class="form-control" id="modalpinterviewer" [(ngModel)]="data.primaryinterviewer">
+       <!-- <input type="text" class="form-control" id="modalinterviewtime" [(ngModel)]="data.interviewtime">-->
       </div>
     </div>
   </div>

@@ -22,7 +22,8 @@ export class DataTableComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
     });
   }
-  displayColumnHeader = ['id','Interview date', 'Interview time', 'Interview type', 'Primary interviewer', 'comments'];
+ // displayColumnHeader = ['id','Interview date', 'Interview time', 'Interview type', 'Primary interviewer', 'comments'];
+  displayColumnHeader = ['reportname','report' ,'datasetname', 'comments'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   ngAfterViewInit() {
    // this.dataSource.paginator = this.paginator;

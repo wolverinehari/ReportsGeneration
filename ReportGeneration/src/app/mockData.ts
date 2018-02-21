@@ -1,4 +1,139 @@
- export let reportTableData = [{
+export let reportTableData = [{
+  reportname: "Provider Network Adqquacy",
+  report: "HSD#3",
+  datasetname: ["HSD.HSD_PCP", "HSD.PROVIDER_PROFILE_FINAL"],
+  Editable: 'N'
+},
+{
+  reportname: "Over and Under Utilization",
+  report: "HSD#40",
+  datasetname: ["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER", "HSD.MEMBER_CLINICAL_CARE_LEVEL", "HSD.QUARTER_PHARMACY_ALL_CLAIMS"],
+  Editable: 'N'
+},
+{
+  reportname: "Patient Centered Medical Homes",
+  report: "HSD#48",
+  datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
+  Editable: 'N'
+}]
+export let dataTableData = [{
+  reportname: "Provider Network Adqquacy",
+  report: "HSD#3",
+  datasetname: ["HSD.HSD_PCP", "HSD.PROVIDER_PROFILE_FINAL"],
+  Editable: 'N',
+  comments:'ddddd'
+},
+{
+  reportname: "Over and Under Utilization",
+  report: "HSD#40",
+  datasetname: ["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER", "HSD.MEMBER_CLINICAL_CARE_LEVEL", "HSD.QUARTER_PHARMACY_ALL_CLAIMS"],
+  Editable: 'N',
+  comments:'ddddd'
+  
+},
+{
+  reportname: "Patient Centered Medical Homes",
+  report: "HSD#48",
+  datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
+  Editable: 'N',
+  comments:'ddddd'
+  
+},
+{
+  reportname: "Provider Network Adqquacy",
+  report: "HSD#3",
+  datasetname: ["HSD.HSD_PCP", "HSD.PROVIDER_PROFILE_FINAL"],
+  Editable: 'N',
+  comments:'ddddd'
+},
+{
+  reportname: "Over and Under Utilization",
+  report: "HSD#40",
+  datasetname: ["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER", "HSD.MEMBER_CLINICAL_CARE_LEVEL", "HSD.QUARTER_PHARMACY_ALL_CLAIMS"],
+  Editable: 'N',
+  comments:'ddddd'
+  
+},
+{
+  reportname: "Patient Centered Medical Homes",
+  report: "HSD#48",
+  datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
+  Editable: 'N',
+  comments:'ddddd'
+  
+},{
+  reportname: "Provider Network Adqquacy",
+  report: "HSD#3",
+  datasetname: ["HSD.HSD_PCP", "HSD.PROVIDER_PROFILE_FINAL"],
+  Editable: 'N',
+  comments:'ddddd'
+},{
+  reportname: "Over and Under Utilization",
+  report: "HSD#40",
+  datasetname: ["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER", "HSD.MEMBER_CLINICAL_CARE_LEVEL", "HSD.QUARTER_PHARMACY_ALL_CLAIMS"],
+  Editable: 'N',
+  comments:'ddddd'
+  
+},{
+  reportname: "Patient Centered Medical Homes",
+  report: "HSD#48",
+  datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
+  Editable: 'N',
+  comments:'ddddd'
+  
+},{
+  reportname: "Patient Centered Medical Homes",
+  report: "HSD#48",
+  datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
+  Editable: 'N',
+  comments:'ddddd'
+  
+},{
+  reportname: "Provider Network Adqquacy",
+  report: "HSD#3",
+  datasetname: ["HSD.HSD_PCP", "HSD.PROVIDER_PROFILE_FINAL"],
+  Editable: 'N',
+  comments:'ddddd'
+},{
+  reportname: "Over and Under Utilization",
+  report: "HSD#40",
+  datasetname: ["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER", "HSD.MEMBER_CLINICAL_CARE_LEVEL", "HSD.QUARTER_PHARMACY_ALL_CLAIMS"],
+  Editable: 'N',
+  comments:'ddddd'
+  
+}]
+
+export let loginContent = [{
+  username: 'user1',
+  password: 'user1',
+  action: 'default1,default3'
+},
+{
+  username: 'user2',
+  password: 'user2',
+  action: 'default2,default6'
+},
+{
+  username: 'user3',
+  password: 'user3',
+  action: 'default3'
+},
+{
+  username: 'user4',
+  password: 'user4',
+  action: 'default4'
+},
+{
+  username: 'user5',
+  password: 'user5',
+  action: 'default5'
+},
+{
+  username: 'user6',
+  password: 'user6',
+  action: 'default6'
+}]
+/* export let reportTableData = [{
       id: 1,
       readonly:false,
       interviewdate: '12/19/2017',
@@ -134,34 +269,4 @@
       comments:' join join by join'
     }
   ]
-
-  export let loginContent=[{
-    username:'user1',
-    password:'user1',
-    action:'default1,default3'
-  },
-  {
-    username:'user2',
-    password:'user2',
-    action:'default2,default6'
-  },
-  {
-    username:'user3',
-    password:'user3',
-    action:'default3'
-  },
-  {
-    username:'user4',
-    password:'user4',
-    action:'default4'
-  },
-  {
-    username:'user5',
-    password:'user5',
-    action:'default5'
-  },
-  {
-    username:'user6',
-    password:'user6',
-    action:'default6'
-  }]
+*/
