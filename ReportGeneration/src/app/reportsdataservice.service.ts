@@ -11,7 +11,7 @@ export class ReportsdataserviceService {
   selectedlogin: any = [{
     username: 'user1',
     password: 'user1',
-    action: 'default1'
+    action: 'HSD#3,HSD#70'
   }];
   constructor(private http: HttpClient) {
     this.getLoginData();

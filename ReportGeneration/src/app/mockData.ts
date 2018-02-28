@@ -9,13 +9,18 @@ export let reportTableData = [{
   report: "HSD#40",
   datasetname: ["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER", "HSD.MEMBER_CLINICAL_CARE_LEVEL", "HSD.QUARTER_PHARMACY_ALL_CLAIMS"],
   Editable: 'N'
-},
-{
+},{
   reportname: "Patient Centered Medical Homes",
   report: "HSD#48",
   datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
   Editable: 'N'
-}]
+},
+{
+  reportname: "Patient Centered Medical Homes",
+  report: "HSD#70",
+  datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
+  Editable: 'N'
+},]
 export let dataTableData = [{
   reportname: "Provider Network Adqquacy",
   report: "HSD#3",
@@ -106,32 +111,32 @@ export let dataTableData = [{
 export let loginContent = [{
   username: 'user1',
   password: 'user1',
-  action: 'default1,default3'
+  action: 'HSD#3,HSD#70'
 },
 {
   username: 'user2',
   password: 'user2',
-  action: 'default2,default6'
+  action: 'HSD#3,HSD#48'
 },
 {
   username: 'user3',
   password: 'user3',
-  action: 'default3'
+  action: 'HSD#3'
 },
 {
   username: 'user4',
   password: 'user4',
-  action: 'default4'
+  action: 'HSD#3'
 },
 {
   username: 'user5',
   password: 'user5',
-  action: 'default5'
+  action: 'HSD#3'
 },
 {
   username: 'user6',
   password: 'user6',
-  action: 'default6'
+  action: 'HSD#3'
 }]
 /* export let reportTableData = [{
       id: 1,

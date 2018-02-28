@@ -12,8 +12,13 @@ import {ReportsdataserviceService} from '../reportsdataservice.service';
 export class LandingpageComponent implements OnInit {
 
   constructor(private router:Router,private reportsdataserviceService:ReportsdataserviceService) { }
-  selectedlogindata=this.reportsdataserviceService.selectedlogin[0];
+  selectedlogindata:any;
+  reportTableData:any;
   ngOnInit() {
+    this.selectedlogindata=this.reportsdataserviceService.selectedlogin[0];
+    this.reportsdataserviceService.getTables().subscribe(dataobj =>{
+      this.reportTableData=dataobj;
+    });
   }
   navigationCheck():void{
    this.router.navigate(['/tabpage']);

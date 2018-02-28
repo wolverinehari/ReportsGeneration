@@ -1,33 +1,6 @@
 <div class="row">
-  <div class="col-lg-4">
-     <button type="button" class="btn btn-default" *ngIf="selectedlogindata.action.indexOf('default1')>=0?true:false" (click)="navigationCheck()">Default 1</button>
-     <button type="button" class="btn btn-default" *ngIf="selectedlogindata.action.indexOf('default1')<0?true:false" disabled >Default 1</button>
-     
-  </div>
-  <div class="col-lg-4">
-       <button type="button" *ngIf="selectedlogindata.action.indexOf('default2')>=0?true:false" class="btn btn-default">Default 2</button>
-       <button type="button" *ngIf="selectedlogindata.action.indexOf('default2')<0?true:false"  disabled class="btn btn-default">Default 2</button>
-       
-  </div>
-  <div class="col-lg-4">
-       <button type="button" *ngIf="selectedlogindata.action.indexOf('default3')>=0?true:false" class="btn btn-default">Default 3</button>
-       <button type="button" *ngIf="selectedlogindata.action.indexOf('default3')<0?true:false" disabled class="btn btn-default">Default 3</button>
- </div>
-</div>
-<div class="row">
-  <div class="col-lg-4">
-       <button type="button" *ngIf="selectedlogindata.action.indexOf('default4')>=0?true:false" class="btn btn-default">Default 4</button>
-       <button type="button" *ngIf="selectedlogindata.action.indexOf('default4')<0?true:false" disabled class="btn btn-default">Default 4</button>
-       
-  </div>
-  <div class="col-lg-4">
-       <button type="button" *ngIf="selectedlogindata.action.indexOf('default5')>=0?true:false" class="btn btn-default">Default 5</button>
-       <button type="button" *ngIf="selectedlogindata.action.indexOf('default5')<0?true:false" disabled class="btn btn-default">Default 5</button>
-       
-  </div>
-  <div class="col-lg-4">
-       <button type="button" *ngIf="selectedlogindata.action.indexOf('default6')>=0?true:false" class="btn btn-default">Default 6</button>
-       <button type="button" *ngIf="selectedlogindata.action.indexOf('default6')<0?true:false" disabled class="btn btn-default">Default 6</button>
-       
+  <div class="col-lg-4" *ngFor="let item of reportTableData">
+     <button type="button" class="btn btn-default" *ngIf="selectedlogindata.action.indexOf(item.report)>=0?true:false" (click)="navigationCheck()">{{item.report}}</button>
+     <button type="button" class="btn btn-default" *ngIf="selectedlogindata.action.indexOf(item.report)<0?true:false" disabled >{{item.report}}</button>
   </div>
 </div>
