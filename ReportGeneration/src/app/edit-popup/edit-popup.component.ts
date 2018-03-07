@@ -12,7 +12,7 @@ import { ReportsdataserviceService } from '../reportsdataservice.service';
 export class EditPopupComponent implements OnInit {
   @Input() tableContent: any;
   @Output() tableContentStatusChange = new EventEmitter<Element>();
-  @Input() itemid: Number;
+  @Input() itemid: any;
   ischecked:boolean=false;
   constructor(public dialog: MatDialog, public constantdataService: ReportsdataserviceService) { }
   dataObj: any = {
@@ -28,8 +28,8 @@ export class EditPopupComponent implements OnInit {
   openDialog(event): void {
     var data;
     this.ischecked=false;
-    if (!!this.itemid) {
-      data = this.tableContent.data.filter(item => item.report == this.itemid)[0]
+    if (!!this.itemid || this.itemid>=0) {
+      data = this.tableContent.data[this.itemid];
     } else {
       data = this.dataObj;
     }

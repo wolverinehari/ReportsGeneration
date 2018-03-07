@@ -22,7 +22,7 @@ export class ReportstableComponent implements OnInit {
       let mergeArray =[]
       dataobj.forEach(function(item,index){
           mergeArray.push(Object.keys(item).map(key => ({ key, value: item[key] })));
-          mergeArray[index].push({key:'Readonly',value:'true'});
+          mergeArray[index].push({key:'Readonly',value:'true','index':index});
       })
       this.displayColumnHeader = Object.keys(dataobj[0]).map(key => (key));
       this.displayColumnHeader.splice(1,0,'Readonly')

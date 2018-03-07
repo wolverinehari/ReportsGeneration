@@ -14,7 +14,7 @@
              <ng-container [matColumnDef]="attr.key">
               <mat-header-cell *matHeaderCellDef>{{attr.key}}</mat-header-cell>
               <mat-cell *matCellDef="let element">
-                <app-edit-popup [itemid]="element.key" [tableContent]="dataSource" (tableContentStatusChange)='tableContentStatusChange(event)'></app-edit-popup>
+                <app-edit-popup [itemid]="attr.index" [tableContent]="dataSource" (tableContentStatusChange)='tableContentStatusChange(event)'></app-edit-popup>
               </mat-cell>
             </ng-container>
           </ng-container>
