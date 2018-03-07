@@ -1,4 +1,4 @@
-export let reportTableData = [{
+export let reportLandingData = [{
   reportname: "Provider Network Adqquacy",
   report: "HSD#3",
   datasetname: ["HSD.HSD_PCP", "HSD.PROVIDER_PROFILE_FINAL"],
@@ -9,7 +9,7 @@ export let reportTableData = [{
   report: "HSD#40",
   datasetname: ["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER", "HSD.MEMBER_CLINICAL_CARE_LEVEL", "HSD.QUARTER_PHARMACY_ALL_CLAIMS"],
   Editable: 'N'
-},{
+}, {
   reportname: "Patient Centered Medical Homes",
   report: "HSD#48",
   datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
@@ -21,91 +21,119 @@ export let reportTableData = [{
   datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
   Editable: 'N'
 },]
+export let reportTableData = [{
+  ListType: 'ENF',
+  InsuranceID: "10598489700",
+  MedicaidID: "3662946630",
+  SSN: "529287966",
+  FIRST_NAME: "JEAN",
+  LAST_NAME: "RYAN",
+  DOB: "29.05.1938",
+  NFLOCRefusal: "29.05.1938",
+  RefusalDate: "00:00:00",
+  AlternateMCO: "FALSE",
+  AlternateMCODate: "",
+  Comments: ""
+},
+{
+  ListType: 'ENF',
+  InsuranceID: "10598489700",
+  MedicaidID: "3662946630",
+  SSN: "529287966",
+  FIRST_NAME: "JEAN",
+  LAST_NAME: "RYAN",
+  DOB: "29.05.1938",
+  NFLOCRefusal: "29.05.1938",
+  RefusalDate: "00:00:00",
+  AlternateMCO: "FALSE",
+  AlternateMCODate: "",
+  Comments: ""
+}];
 export let dataTableData = [{
   reportname: "Provider Network Adqquacy",
   report: "HSD#3",
   datasetname: ["HSD.HSD_PCP", "HSD.PROVIDER_PROFILE_FINAL"],
   Editable: 'N',
-  comments:'ddddd'
+  comments: 'ddddd'
 },
 {
   reportname: "Over and Under Utilization",
   report: "HSD#40",
   datasetname: ["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER", "HSD.MEMBER_CLINICAL_CARE_LEVEL", "HSD.QUARTER_PHARMACY_ALL_CLAIMS"],
   Editable: 'N',
-  comments:'ddddd'
-  
+  comments: 'ddddd'
+
 },
 {
   reportname: "Patient Centered Medical Homes",
   report: "HSD#48",
   datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
   Editable: 'N',
-  comments:'ddddd'
-  
+  comments: 'ddddd'
+
 },
 {
   reportname: "Provider Network Adqquacy",
   report: "HSD#3",
   datasetname: ["HSD.HSD_PCP", "HSD.PROVIDER_PROFILE_FINAL"],
   Editable: 'N',
-  comments:'ddddd'
+  comments: 'ddddd'
 },
 {
   reportname: "Over and Under Utilization",
   report: "HSD#40",
   datasetname: ["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER", "HSD.MEMBER_CLINICAL_CARE_LEVEL", "HSD.QUARTER_PHARMACY_ALL_CLAIMS"],
   Editable: 'N',
-  comments:'ddddd'
-  
+  comments: 'ddddd'
+
 },
 {
   reportname: "Patient Centered Medical Homes",
   report: "HSD#48",
   datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
   Editable: 'N',
-  comments:'ddddd'
-  
-},{
+  comments: 'ddddd'
+
+}, {
   reportname: "Provider Network Adqquacy",
   report: "HSD#3",
   datasetname: ["HSD.HSD_PCP", "HSD.PROVIDER_PROFILE_FINAL"],
   Editable: 'N',
-  comments:'ddddd'
-},{
+  comments: 'ddddd'
+}, {
   reportname: "Over and Under Utilization",
   report: "HSD#40",
   datasetname: ["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER", "HSD.MEMBER_CLINICAL_CARE_LEVEL", "HSD.QUARTER_PHARMACY_ALL_CLAIMS"],
   Editable: 'N',
-  comments:'ddddd'
-  
-},{
+  comments: 'ddddd'
+
+}, {
   reportname: "Patient Centered Medical Homes",
   report: "HSD#48",
   datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
   Editable: 'N',
-  comments:'ddddd'
-  
-},{
+  comments: 'ddddd'
+
+}, {
   reportname: "Patient Centered Medical Homes",
   report: "HSD#48",
   datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
   Editable: 'N',
-  comments:'ddddd'
-  
-},{
+  comments: 'ddddd'
+
+}, {
   reportname: "Provider Network Adqquacy",
   report: "HSD#3",
   datasetname: ["HSD.HSD_PCP", "HSD.PROVIDER_PROFILE_FINAL"],
   Editable: 'N',
-  comments:'ddddd'
-},{
+  comments: 'ddddd'
+}, {
   reportname: "Over and Under Utilization",
   report: "HSD#40",
   datasetname: ["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER", "HSD.MEMBER_CLINICAL_CARE_LEVEL", "HSD.QUARTER_PHARMACY_ALL_CLAIMS"],
   Editable: 'N',
-  comments:'ddddd'
-  
+  comments: 'ddddd'
+
 }]
 
 export let loginContent = [{

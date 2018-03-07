@@ -16,7 +16,7 @@ export class LandingpageComponent implements OnInit {
   reportTableData:any;
   ngOnInit() {
     this.selectedlogindata=this.reportsdataserviceService.selectedlogin[0];
-    this.reportsdataserviceService.getTables().subscribe(dataobj =>{
+    this.reportsdataserviceService.getLandingTable().subscribe(dataobj =>{
       this.reportTableData=dataobj;
     });
   }

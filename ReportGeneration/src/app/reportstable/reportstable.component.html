@@ -1,25 +1,41 @@
 <div class="row">
-<div class="col-lg-12">
-<div class="example-container mat-elevation-z8">
-  <mat-table #table [(dataSource)]="dataSource">
-<!--
-    <!-- Position Column -->
-    <ng-container matColumnDef="reportname">
-      <mat-header-cell *matHeaderCellDef> reportname</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.reportname}} </mat-cell>
-    </ng-container>
+  <div class="col-lg-12">
+    <div class="example-container mat-elevation-z8">
 
-    <ng-container matColumnDef="readonly">
+      <mat-table #table [dataSource]="dataSource">
+        <ng-container *ngFor="let attr of dataObject">
+          <ng-container *ngIf="attr.key.indexOf('Readonly')<0 && attr.key.toUpperCase().indexOf('COMMENTS')<0">
+            <ng-container [matColumnDef]="attr.key">
+              <mat-header-cell *matHeaderCellDef>{{attr.key}}</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{attr.value}} </mat-cell>
+            </ng-container>
+          </ng-container>
+          <ng-container *ngIf="attr.key.indexOf('Readonly')>=0 && attr.key.toUpperCase().indexOf('COMMENTS')<0">
+             <ng-container [matColumnDef]="attr.key">
+              <mat-header-cell *matHeaderCellDef>{{attr.key}}</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                <app-edit-popup [itemid]="element.key" [tableContent]="dataSource" (tableContentStatusChange)='tableContentStatusChange(event)'></app-edit-popup>
+              </mat-cell>
+            </ng-container>
+          </ng-container>
+          <ng-container *ngIf="attr.key.toUpperCase().indexOf('COMMENTS')>=0">
+             <ng-container [matColumnDef]="attr.key">
+              <mat-header-cell *matHeaderCellDef>{{attr.key}}</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                 <textarea class="form-control" rows="5" id="comment" disabled>{{element.comments}}</textarea>
+              </mat-cell>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+        <!--<ng-container [matColumnDef]="readonly">
       <mat-header-cell *matHeaderCellDef> Read only </mat-header-cell>
       <mat-cell *matCellDef="let element"><app-edit-popup [itemid]="element.report" [tableContent]="dataSource" (tableContentStatusChange)='tableContentStatusChange(event)'></app-edit-popup></mat-cell>
     </ng-container>
 
-    <!-- Name Column -->
     <ng-container matColumnDef="report">
       <mat-header-cell *matHeaderCellDef>Report</mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.report}} </mat-cell>
     </ng-container>
-    <!-- Symbol Column -->
     <ng-container matColumnDef="datasetname">
       <mat-header-cell *matHeaderCellDef>DataSet</mat-header-cell>
       <mat-cell *matCellDef="let element"> <p *ngFor="let item of element.datasetname">{{item}}</p></mat-cell>
@@ -36,12 +52,11 @@
         <textarea class="form-control" rows="5" id="comment" disabled>{{element.comments}}</textarea>
      </mat-cell>
     </ng-container>-->
-    <mat-header-row *matHeaderRowDef="displayColumnHeader"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayColumnHeader;"></mat-row>
-  </mat-table>
-
-  <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
-  </mat-paginator>
-</div>
-</div>
+        <mat-header-row *matHeaderRowDef="displayColumnHeader"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayColumnHeader;"></mat-row>
+      </mat-table>
+      <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+      </mat-paginator>
+    </div>
+  </div>
 </div>

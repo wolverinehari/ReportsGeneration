@@ -20,6 +20,10 @@ export class ReportsdataserviceService {
     //return this.alltabledataObject;
     return this.http.get<any[]>('api/reportTableData')
   }
+  getLandingTable(): Observable<tableData[]> {
+    //return this.alltabledataObject;
+    return this.http.get<any[]>('api/reportLandingData')
+  }
   getLoginData(): void {
     this.http.get<any[]>('api/loginContent').subscribe(loginContent => this.loginData = loginContent)
   }
