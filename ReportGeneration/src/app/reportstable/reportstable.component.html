@@ -20,7 +20,14 @@
           </ng-container>
           <ng-container *ngIf="attr.key.toUpperCase().indexOf('COMMENTS')>=0">
              <ng-container [matColumnDef]="attr.key">
-              <mat-header-cell *matHeaderCellDef>{{attr.key}}</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef>Download Option 
+                      <select class="form-control" id="downloadoptions">
+                            <option>PDF</option>
+                            <option>Excel</option>
+                            <option>Docs</option>
+                        </select>
+                </mat-header-cell>
+              <!--<mat-header-cell *matHeaderCellDef>{{attr.key}}</mat-header-cell>-->
               <mat-cell *matCellDef="let element">
                  <textarea class="form-control" rows="5" id="comment" disabled>{{element.comments}}</textarea>
               </mat-cell>
