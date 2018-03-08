@@ -20,8 +20,9 @@ export class LandingpageComponent implements OnInit {
       this.reportTableData=dataobj;
     });
   }
-  navigationCheck():void{
-   this.router.navigate(['/tabpage']);
+  navigationCheck(report):void{
+     this.router.navigate(['/tabpage', report]);
+    //this.router.navigate(['/tabpage/:'+report]);
  }
 
 }

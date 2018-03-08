@@ -11,8 +11,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full' },
   {path: 'login', component: LoginComponent},
   {path: 'landingpage', component: LandingpageComponent},
-  {path: 'tabpage', component: TabsectionComponent}
-  
+  {path: 'tabpage/:id', component: TabsectionComponent}
 ]
 @NgModule({
   exports: [

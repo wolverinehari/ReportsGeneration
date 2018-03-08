@@ -1,23 +1,23 @@
 export let reportLandingData = [{
   reportname: "Provider Network Adqquacy",
-  report: "HSD#3",
+  report: "HSD3",
   datasetname: ["HSD.HSD_PCP", "HSD.PROVIDER_PROFILE_FINAL"],
   Editable: 'N'
 },
 {
   reportname: "Over and Under Utilization",
-  report: "HSD#40",
+  report: "HSD40",
   datasetname: ["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER", "HSD.MEMBER_CLINICAL_CARE_LEVEL", "HSD.QUARTER_PHARMACY_ALL_CLAIMS"],
   Editable: 'N'
 }, {
   reportname: "Patient Centered Medical Homes",
-  report: "HSD#48",
+  report: "HSD48",
   datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
   Editable: 'N'
 },
 {
   reportname: "Patient Centered Medical Homes",
-  report: "HSD#70",
+  report: "HSD70",
   datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
   Editable: 'N'
 },]
@@ -82,32 +82,32 @@ export let dataTableData = [{
 export let loginContent = [{
   username: 'user1',
   password: 'user1',
-  action: 'HSD#3,HSD#70'
+  action: 'HSD3,HSD70'
 },
 {
   username: 'user2',
   password: 'user2',
-  action: 'HSD#3,HSD#48'
+  action: 'HSD3,HSD48'
 },
 {
   username: 'user3',
   password: 'user3',
-  action: 'HSD#3'
+  action: 'HSD3'
 },
 {
   username: 'user4',
   password: 'user4',
-  action: 'HSD#3'
+  action: 'HSD3'
 },
 {
   username: 'user5',
   password: 'user5',
-  action: 'HSD#3'
+  action: 'HSD3'
 },
 {
   username: 'user6',
   password: 'user6',
-  action: 'HSD#3'
+  action: 'HSD3'
 }]
 /* export let reportTableData = [{
       id: 1,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {ReportsdataserviceService} from '../reportsdataservice.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-tabsection',
   templateUrl: './tabsection.component.html',
@@ -11,11 +12,20 @@ export class TabsectionComponent implements OnInit {
   dataObject:any={
     indexVal:0
   }
-  constructor() { }
+  reportTableData:any;
+  selectedreport:any;
+  selectedTable:any;
+  constructor(private reportsdataserviceService:ReportsdataserviceService, private route: ActivatedRoute) { }
   ngOnInit() {
+    this.selectedreport = this.route.snapshot.paramMap.get('id');
+    this.reportsdataserviceService.getLandingTable().subscribe(dataobj =>{
+      this.reportTableData=dataobj;
+      this.selectedTable=this.reportTableData.filter(item=>item.report==this.selectedreport)
+      this.selectedTable=this.selectedTable[0];
+    });
   }
   tablick(id):void{
-    switch(id){
+    switch(id+1){
       case 1:
         this.isreportTable=true
         this.indexVal=0;
