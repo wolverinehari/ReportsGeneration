@@ -6,8 +6,9 @@
     <div class="col-lg-8">
       <div class="form-group">
         <label for="">{{item.key}}</label>
+        <span class="required" *ngIf="item.key.toUpperCase().indexOf('COMMENTS')>=0 && dataInternal.isError">Comments is required</span>
         <input type="text" *ngIf="item.key.toUpperCase().indexOf('COMMENTS')<0" class="form-control" id="modalid" [(ngModel)]="item.value">
-        <textarea *ngIf="item.key.toUpperCase().indexOf('COMMENTS')>=0" class="form-control" rows="5" id="comment"  [(ngModel)]="data.comments"></textarea>
+        <textarea *ngIf="item.key.toUpperCase().indexOf('COMMENTS')>=0" class="form-control" rows="5" id="comment"  [(ngModel)]="dataInternal.comments"></textarea>
       </div>
     </div>
   </div>
