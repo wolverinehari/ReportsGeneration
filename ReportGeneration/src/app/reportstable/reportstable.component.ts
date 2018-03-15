@@ -15,9 +15,7 @@ export class ReportstableComponent implements OnInit {
   constructor(private constantdataService: ReportsdataserviceService) {
    // this.dataObject = constantdataService.getTables();
    // this.dataSource = new MatTableDataSource<tableData>(this.dataObject);
-  }
-  ngOnInit() {
-    this.constantdataService.getTables().subscribe(dataobj =>{
+   this.constantdataService.getTables().subscribe(dataobj =>{
       dataobj; 
       let mergeArray =[]
       dataobj.forEach(function(item,index){
@@ -27,9 +25,12 @@ export class ReportstableComponent implements OnInit {
       this.displayColumnHeader = Object.keys(dataobj[0]).map(key => (key));
       this.displayColumnHeader.splice(1,0,'Readonly')
       this.dataObject=mergeArray[0];
-      this.dataSource = new MatTableDataSource<Element>(mergeArray);
+      this.dataSource = new MatTableDataSource<any>(dataobj);
       this.dataSource.paginator = this.paginator;
     });
+  }
+  ngOnInit() {
+    
   }
   tableContentStatusChange(data:any){
   }

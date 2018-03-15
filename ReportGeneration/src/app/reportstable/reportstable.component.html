@@ -1,20 +1,19 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="example-container mat-elevation-z8">
-
-      <mat-table #table [dataSource]="dataSource" scroll-glue-right>
+      <mat-table #table [dataSource]="dataSource" >
         <ng-container *ngFor="let attr of dataObject">
           <ng-container *ngIf="attr.key.indexOf('Readonly')<0 && attr.key.toUpperCase().indexOf('COMMENTS')<0">
             <ng-container [matColumnDef]="attr.key">
               <mat-header-cell *matHeaderCellDef>{{attr.key}}</mat-header-cell>
-              <mat-cell *matCellDef="let element"> {{attr.value}} </mat-cell>
+              <mat-cell *matCellDef="let selement"> {{selement[attr.key]}} </mat-cell>
             </ng-container>
           </ng-container>
           <ng-container *ngIf="attr.key.indexOf('Readonly')>=0 && attr.key.toUpperCase().indexOf('COMMENTS')<0">
              <ng-container [matColumnDef]="attr.key">
               <mat-header-cell *matHeaderCellDef>{{attr.key}}</mat-header-cell>
-              <mat-cell *matCellDef="let element">
-                <app-edit-popup [itemid]="attr.index" [tableContent]="dataSource" (tableContentStatusChange)='tableContentStatusChange(event)'></app-edit-popup>
+              <mat-cell *matCellDef="let row">
+                <app-edit-popup [itemid]="attr.index" [tableContent]="{'data':row,column:displayColumnHeader}" (tableContentStatusChange)='tableContentStatusChange(event)'></app-edit-popup>
               </mat-cell>
             </ng-container>
           </ng-container>
@@ -28,8 +27,8 @@
                         </select>
                 </mat-header-cell>
               <!--<mat-header-cell *matHeaderCellDef>{{attr.key}}</mat-header-cell>-->
-              <mat-cell *matCellDef="let element">
-                 <textarea class="form-control" rows="5" id="comment" disabled>{{element.comments}}</textarea>
+              <mat-cell *matCellDef="let selement">
+                 <textarea class="form-control" rows="5" id="comment" disabled>{{selement[attr.key]}}</textarea>
               </mat-cell>
             </ng-container>
           </ng-container>

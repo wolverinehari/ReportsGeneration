@@ -31,12 +31,12 @@ export let reportTableData = [{
   DOB: "29.05.1938",
   NFLOCRefusal: "29.05.1938",
   RefusalDate: "00:00:00",
-  AlternateMCO: "FALSE",
+  AlternateMCO: "TRUE",
   AlternateMCODate: "",
   Comments: ""
 },
 {
-  ListType: 'ENF',
+  ListType: 'FNS',
   InsuranceID: "10598489700",
   MedicaidID: "3662946630",
   SSN: "529287966",

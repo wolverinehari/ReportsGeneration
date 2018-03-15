@@ -29,7 +29,8 @@ export class EditPopupComponent implements OnInit {
     var data;
     this.ischecked=false;
     if (!!this.itemid || this.itemid>=0) {
-      data = this.tableContent.data[this.itemid];
+      data = this.tableContent;
+      console.log(data)
     } else {
       data = this.dataObj;
     }

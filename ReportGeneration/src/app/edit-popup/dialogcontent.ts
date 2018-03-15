@@ -17,11 +17,19 @@ export class Dialogcontent {
         this.dialogRef.close();
     }
     onSubmitClick(data):void{
-        if(!!this.dataInternal.comments && this.dataInternal.comments.length>0){
-             this.dialogRef.close();
-        }else{
+            let check=false;
+            this.data.column.forEach((element) => {
+                if(element.toUpperCase().indexOf('COMMENTS')>=0 && this.data.data[element].length>0 ){
+                    this.dialogRef.close(); 
+                    check=false;      
+                }else{
+                    check=true;
+                }
+            }); 
+            if(check){
             this.dataInternal.isError=true
-        }
+                
+            }
    }
 
 }
