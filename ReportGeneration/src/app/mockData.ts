@@ -66,7 +66,7 @@ export let dataTableData = [{
   Comments: ""
 },
 {
-  ListType: 'ENF',
+  ListType: 'FNS',
   InsuranceID: "10598489700",
   MedicaidID: "3662946630",
   SSN: "529287966",

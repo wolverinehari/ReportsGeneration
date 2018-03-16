@@ -6,14 +6,14 @@
           <ng-container *ngIf="attr.key.indexOf('Readonly')<0 && attr.key.toUpperCase().indexOf('COMMENTS')<0">
             <ng-container [matColumnDef]="attr.key">
               <mat-header-cell *matHeaderCellDef>{{attr.key}}</mat-header-cell>
-              <mat-cell *matCellDef="let element"> {{attr.value}} </mat-cell>
+              <mat-cell *matCellDef="let element"> {{element[attr.key]}} </mat-cell>
             </ng-container>
           </ng-container>
           <ng-container *ngIf="attr.key.toUpperCase().indexOf('COMMENTS')>=0">
             <ng-container [matColumnDef]="attr.key">
               <mat-header-cell *matHeaderCellDef>{{attr.key}}</mat-header-cell>
               <mat-cell *matCellDef="let element">
-                <textarea class="form-control" rows="5" id="comment" disabled>{{element.comments}}</textarea>
+                <textarea class="form-control" rows="5" id="comment" disabled>{{element[attr.key]}}</textarea>
               </mat-cell>
             </ng-container>
           </ng-container>

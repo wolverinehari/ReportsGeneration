@@ -20,14 +20,10 @@ export class DataTableComponent implements OnInit {
       let mergeArray =[]
       dataobj.forEach(function(item,index){
           mergeArray.push(Object.keys(item).map(key => ({ key, value: item[key] })));
-          //mergeArray[index].push({key:'Readonly',value:'true'});
       })
       this.displayColumnHeader = Object.keys(dataobj[0]).map(key => (key));
-      //this.displayColumnHeader.splice(1,0,'Readonly')
       this.dataObject=mergeArray[0];
-      //let copyArray = Object.assign([], dataobj);
-      //this.dataObject = copyArray.splice((this.indexVal - 1) * 4, 4);
-      this.dataSource = new MatTableDataSource<datatableData>(mergeArray);
+      this.dataSource = new MatTableDataSource<any>(dataobj);
       this.dataSource.paginator = this.paginator;
     });
   }
