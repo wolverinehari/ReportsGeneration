@@ -6,15 +6,17 @@
     border-radius: 10px;
     text-align: center;
 }
-.mat-table{
+.mat-table {
+    position:relative;
+    overflow: auto;
+    max-height: 500px;
+    width:100%;
     background-color: rgba(255, 255, 255, 0.959);
     height : 100vh;
-    overflow: auto;   
-   /* max-width: 1123px;*/
 }
-.mat-header-cell, .mat-cell {
+/*.mat-header-cell, .mat-cell {
     min-width: 150px;
-}
+}*/
 .mat-form-field-underline{
     background-color:transparent;
 }
@@ -40,5 +42,7 @@
     background-color: white;
 }
 .mat-row, .mat-header-row {
-  width: 1123px; 
+  /*width: 1123px; */
+  min-width: 1600px; 
+  width:100%;
 }
