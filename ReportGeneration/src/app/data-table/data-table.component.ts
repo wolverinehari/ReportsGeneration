@@ -1,6 +1,5 @@
 import { Component, OnInit ,ViewChild,Input} from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
-import { datatableData } from '../reportTableData';
 import {ReportsdataserviceService} from '../reportsdataservice.service';
 @Component({
   selector: 'app-data-table',

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
-import { tableData } from '../reportTableData';
+// import { tableData } from '../reportTableData';
 import {ReportsdataserviceService} from '../reportsdataservice.service';
 
 @Component({

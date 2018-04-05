@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { tableData, datatableData } from './reportTableData';
+// import { tableData, datatableData } from './reportTableData';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 
 @Injectable()
 export class ReportsdataserviceService {
-  allDatatableObject: datatableData[];
+  //allDatatableObject: datatableData[];
   loginData: any;
   selectedlogin: any = [{
     username: 'user1',
@@ -16,18 +16,18 @@ export class ReportsdataserviceService {
   constructor(private http: HttpClient) {
     this.getLoginData();
    }
-  getTables(): Observable<tableData[]> {
+  getTables(): Observable<any[]> {
     //return this.alltabledataObject;
     return this.http.get<any[]>('api/reportTableData')
   }
-  getLandingTable(): Observable<tableData[]> {
+  getLandingTable(): Observable<any[]> {
     //return this.alltabledataObject;
     return this.http.get<any[]>('api/reportLandingData')
   }
   getLoginData(): void {
     this.http.get<any[]>('api/loginContent').subscribe(loginContent => this.loginData = loginContent)
   }
-  getDataTables(): Observable<tableData[]> {
+  getDataTables(): Observable<any[]> {
     return this.http.get<any[]>('api/dataTableData')
     
     // let copyArray;

@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Dialogcontent } from './dialogcontent'
-import { tableData } from '../reportTableData';
 import { ReportsdataserviceService } from '../reportsdataservice.service';
 
 @Component({
