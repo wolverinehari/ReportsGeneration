@@ -20,7 +20,8 @@
           <ng-container *ngIf="attr.key.toUpperCase().indexOf('COMMENTS')>=0">
              <ng-container [matColumnDef]="attr.key">
                 <mat-header-cell *matHeaderCellDef>Download Option 
-                      <select class="form-control" id="downloadoptions">
+                      <select class="form-control" id="downloadoptions" (change)="downloadChange($event.target.value)">
+                            <option>Select value</option>
                             <option>PDF</option>
                             <option>Excel</option>
                             <option>Docs</option>

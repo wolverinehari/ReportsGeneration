@@ -23,6 +23,7 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
+    "@types/jspdf": "^1.1.31",
     "angular-in-memory-web-api": "^0.5.3",
     "angular2-fontawesome": "^0.9.3",
     "bootstrap": "^3.3.7",

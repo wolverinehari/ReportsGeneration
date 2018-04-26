@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 // import { tableData } from '../reportTableData';
 import {ReportsdataserviceService} from '../reportsdataservice.service';
-
+import * as jsPDF from 'jspdf';
 @Component({
   selector: 'app-reportstable',
   templateUrl: './reportstable.component.html',
@@ -31,6 +31,13 @@ export class ReportstableComponent implements OnInit {
   }
   ngOnInit() {
     
+  }
+  downloadChange(value){
+   const elementToPrint = document.querySelector('app-reportstable mat-table'); //The html element to become a pdf
+   let vardoc = new jsPDF();
+    vardoc.addHTML(elementToPrint, () => {
+        vardoc.save('web.pdf');
+    });
   }
   tableContentStatusChange(data:any){
   }
