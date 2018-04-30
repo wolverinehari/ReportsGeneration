@@ -19,13 +19,12 @@
           </ng-container>
           <ng-container *ngIf="attr.key.toUpperCase().indexOf('COMMENTS')>=0">
              <ng-container [matColumnDef]="attr.key">
-                <mat-header-cell *matHeaderCellDef>Download Option 
-                      <select class="form-control" id="downloadoptions" (change)="downloadChange($event.target.value)">
-                            <option>Select value</option>
-                            <option>PDF</option>
-                            <option>Excel</option>
-                            <option>Docs</option>
-                        </select>
+                <mat-header-cell *matHeaderCellDef>
+                  <button mat-button class="btn btn-default" [matMenuTriggerFor]="menu">Download</button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="downloadCSV()">CSV</button>
+                    <button mat-menu-item>Excel</button>
+                  </mat-menu>
                 </mat-header-cell>
               <!--<mat-header-cell *matHeaderCellDef>{{attr.key}}</mat-header-cell>-->
               <mat-cell *matCellDef="let selement">

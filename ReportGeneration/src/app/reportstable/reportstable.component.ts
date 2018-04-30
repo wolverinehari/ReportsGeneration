@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 // import { tableData } from '../reportTableData';
 import {ReportsdataserviceService} from '../reportsdataservice.service';
-import * as jsPDF from 'jspdf';
+import { Angular5Csv } from 'angular5-csv/Angular5-csv';
 @Component({
   selector: 'app-reportstable',
   templateUrl: './reportstable.component.html',
@@ -12,6 +12,17 @@ export class ReportstableComponent implements OnInit {
   dataObject: any[];
   dataSource:any;
   displayColumnHeader:any[];
+  csvOption:any= { 
+    fieldSeparator: ',',
+    quoteStrings: '"',
+    decimalseparator: '.',
+    showLabels: true, 
+    showTitle: true,
+    title: 'Report',
+    useBom: true,
+    noDownload: false,
+    headers: []
+  };
   constructor(private constantdataService: ReportsdataserviceService) {
    // this.dataObject = constantdataService.getTables();
    // this.dataSource = new MatTableDataSource<tableData>(this.dataObject);
@@ -27,17 +38,16 @@ export class ReportstableComponent implements OnInit {
       this.dataObject=mergeArray[0];
       this.dataSource = new MatTableDataSource<any>(dataobj);
       this.dataSource.paginator = this.paginator;
+      this.dataObject.forEach((element,index) => {
+        this.csvOption.headers.push(element.key);
+      });
     });
   }
   ngOnInit() {
     
   }
-  downloadChange(value){
-   const elementToPrint = document.querySelector('app-reportstable mat-table'); //The html element to become a pdf
-   let vardoc = new jsPDF();
-    vardoc.addHTML(elementToPrint, () => {
-        vardoc.save('web.pdf');
-    });
+  downloadCSV(){
+    new Angular5Csv(this.dataSource.data,'report', this.csvOption);
   }
   tableContentStatusChange(data:any){
   }
