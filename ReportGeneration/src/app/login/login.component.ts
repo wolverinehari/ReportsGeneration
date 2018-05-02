@@ -1,7 +1,7 @@
 import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import {Router} from '@angular/router'
 import {ReportsdataserviceService} from '../reportsdataservice.service';
-
+import { AuthService } from './../auth/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,7 +9,7 @@ import {ReportsdataserviceService} from '../reportsdataservice.service';
     encapsulation:ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
-  constructor(private router:Router,private reportsdataserviceService:ReportsdataserviceService) { }
+  constructor(private router:Router,private reportsdataserviceService:ReportsdataserviceService,public auth: AuthService) { }
   logindata:any={
     username:'',
     password:''
@@ -18,13 +18,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   loginData():void{
-    let logincheckdata=this.reportsdataserviceService.checkvalidLogin(this.logindata)
-    if(logincheckdata.length>0){
-      this.router.navigate(['/landingpage']);
-      this.isError=false;
-    }else{
-      this.isError=true;
-    }
+    this.auth.login(this.logindata.username, this.logindata.password);
+    debugger;
+    // let logincheckdata=this.reportsdataserviceService.checkvalidLogin(this.logindata)
+    // if(logincheckdata.length>0){
+    //   this.router.navigate(['/landingpage']);
+    //   this.isError=false;
+    // }else{
+    //   this.isError=true;
+    // }
   // 
   }
   valuechange(data){
