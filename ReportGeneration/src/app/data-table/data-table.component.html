@@ -11,7 +11,13 @@
           </ng-container>
           <ng-container *ngIf="attr.key.toUpperCase().indexOf('COMMENTS')>=0">
             <ng-container [matColumnDef]="attr.key">
-              <mat-header-cell *matHeaderCellDef>{{attr.key}}</mat-header-cell>
+              <mat-header-cell *matHeaderCellDef>
+                <button mat-button class="btn btn-default" [matMenuTriggerFor]="menu">Download</button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="downloadCSV()">CSV</button>
+                  <button mat-menu-item (click)="downloadExcel()">Excel</button>
+                </mat-menu>
+              </mat-header-cell>
               <mat-cell *matCellDef="let element">
                 <textarea class="form-control" rows="5" id="comment" disabled>{{element[attr.key]}}</textarea>
               </mat-cell>

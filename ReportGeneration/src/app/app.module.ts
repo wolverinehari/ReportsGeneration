@@ -22,6 +22,7 @@ import {Dialogcontent} from './edit-popup/dialogcontent';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { LocaldatasericeService }  from './localdataserice.service';
 import { AuthService } from './auth/auth.service';
+import { DownloadtableService } from './downloadtable.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,7 @@ import { AuthService } from './auth/auth.service';
     )
   ],
   entryComponents: [EditPopupComponent,Dialogcontent],
-  providers: [ReportsdataserviceService, LoginDataService, LocaldatasericeService,AuthService],
+  providers: [ReportsdataserviceService, LoginDataService, LocaldatasericeService,AuthService, DownloadtableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

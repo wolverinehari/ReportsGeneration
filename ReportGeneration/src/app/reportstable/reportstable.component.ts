@@ -2,12 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 // import { tableData } from '../reportTableData';
 import {ReportsdataserviceService} from '../reportsdataservice.service';
-import { Angular5Csv } from 'angular5-csv/Angular5-csv';
-import * as FileSaver from 'file-saver';
-import * as XLSX from 'xlsx';
-
-const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
-const EXCEL_EXTENSION = '.xlsx';
+import {DownloadtableService} from '../downloadtable.service';
 
 @Component({
   selector: 'app-reportstable',
@@ -18,18 +13,9 @@ export class ReportstableComponent implements OnInit {
   dataObject: any[];
   dataSource:any;
   displayColumnHeader:any[];
-  csvOption:any= { 
-    fieldSeparator: ',',
-    quoteStrings: '"',
-    decimalseparator: '.',
-    showLabels: true, 
-    showTitle: true,
-    title: 'Report',
-    useBom: true,
-    noDownload: false,
-    headers: []
-  };
-  constructor(private constantdataService: ReportsdataserviceService) {
+  csvHeader:any[];
+ 
+  constructor(private constantdataService: ReportsdataserviceService,private DownloadtableService: DownloadtableService) {
    // this.dataObject = constantdataService.getTables();
    // this.dataSource = new MatTableDataSource<tableData>(this.dataObject);
    this.constantdataService.getTables().subscribe(dataobj =>{
@@ -45,18 +31,19 @@ export class ReportstableComponent implements OnInit {
       this.dataSource = new MatTableDataSource<any>(dataobj);
       this.dataSource.paginator = this.paginator;
       this.dataObject.forEach((element,index) => {
-        this.csvOption.headers.push(element.key);
+        this.csvHeader.push(element.key);
       });
+      this.DownloadtableService.setCSVHeader(this.csvHeader);
     });
   }
   ngOnInit() {
     
   }
   downloadCSV(){
-    new Angular5Csv(this.dataSource.data,'reportCSV', this.csvOption);
+    this.DownloadtableService.downloadCSV(this.dataSource.data,'reportCSV')
   }
   downloadExcel(){
-    this.exportAsExcelFile(this.dataSource.data,'reportExcel');
+    this.DownloadtableService.exportAsExcelFile(this.dataSource.data,'reportExcel');
   }
   tableContentStatusChange(data:any){
   }
@@ -64,19 +51,5 @@ export class ReportstableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   ngAfterViewInit() {
     //this.dataSource.paginator = this.paginator;
-  }
-  public exportAsExcelFile(json: any[], excelFileName: string): void {
-    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(json);
-    const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
-    const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
-    // const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'buffer' });
-    this.saveAsExcelFile(excelBuffer, excelFileName);
-  }
-
-  private saveAsExcelFile(buffer: any, fileName: string): void {
-    const data: Blob = new Blob([buffer], {
-      type: EXCEL_TYPE
-    });
-    FileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
   }
 }
