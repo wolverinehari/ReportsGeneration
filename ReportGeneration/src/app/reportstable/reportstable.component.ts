@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild,Input } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 // import { tableData } from '../reportTableData';
 import {ReportsdataserviceService} from '../reportsdataservice.service';
@@ -10,11 +10,10 @@ import {DownloadtableService} from '../downloadtable.service';
   styleUrls: ['./reportstable.component.css']
 })
 export class ReportstableComponent implements OnInit {
+  @Input() indexVal;
   dataObject: any[];
   dataSource:any;
   displayColumnHeader:any[];
-  csvHeader:any[];
- 
   constructor(private constantdataService: ReportsdataserviceService,private DownloadtableService: DownloadtableService) {
    // this.dataObject = constantdataService.getTables();
    // this.dataSource = new MatTableDataSource<tableData>(this.dataObject);
@@ -30,20 +29,20 @@ export class ReportstableComponent implements OnInit {
       this.dataObject=mergeArray[0];
       this.dataSource = new MatTableDataSource<any>(dataobj);
       this.dataSource.paginator = this.paginator;
+      let csvHeader:Array<String>=[];
       this.dataObject.forEach((element,index) => {
-        this.csvHeader.push(element.key);
+        csvHeader.push(element.key);
       });
-      this.DownloadtableService.setCSVHeader(this.csvHeader);
+      this.DownloadtableService.setCSVHeader(csvHeader);
     });
   }
   ngOnInit() {
-    
   }
   downloadCSV(){
-    this.DownloadtableService.downloadCSV(this.dataSource.data,'reportCSV')
+    this.DownloadtableService.downloadCSV(this.dataSource.data,this.indexVal+'_reportCSV')
   }
   downloadExcel(){
-    this.DownloadtableService.exportAsExcelFile(this.dataSource.data,'reportExcel');
+    this.DownloadtableService.exportAsExcelFile(this.dataSource.data,this.indexVal+'_reportExcel');
   }
   tableContentStatusChange(data:any){
   }

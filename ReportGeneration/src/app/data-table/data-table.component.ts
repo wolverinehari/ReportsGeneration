@@ -13,10 +13,7 @@ export class DataTableComponent implements OnInit {
   dataObject:any[];
   dataSource:any;
   displayColumnHeader:any;
-  csvHeader:any[];
-
   constructor(private constantdataService: ReportsdataserviceService,private DownloadtableService: DownloadtableService) {
-   
   }
   ngOnInit() {
     this.constantdataService.getDataTables().subscribe(dataobj =>{
@@ -28,17 +25,18 @@ export class DataTableComponent implements OnInit {
       this.dataObject=mergeArray[0];
       this.dataSource = new MatTableDataSource<any>(dataobj);
       this.dataSource.paginator = this.paginator;
+      let csvHeader:Array<string>=[];
       this.dataObject.forEach((element,index) => {
-        this.csvHeader.push(element.key);
+        csvHeader.push(element.key);
       });
-      this.DownloadtableService.setCSVHeader(this.csvHeader);
-    });
+      this.DownloadtableService.setCSVHeader(csvHeader);
+    }); 
   }
   downloadCSV(){
-    this.DownloadtableService.downloadCSV(this.dataSource.data,'dataTableCSV')
+    this.DownloadtableService.downloadCSV(this.dataSource.data,this.indexVal+'_dataTableCSV')
   }
   downloadExcel(){
-    this.DownloadtableService.exportAsExcelFile(this.dataSource.data,'dataTableExcel');
+    this.DownloadtableService.exportAsExcelFile(this.dataSource.data,this.indexVal+'_dataTableExcel');
   }
  // displayColumnHeader = ['id','Interview date', 'Interview time', 'Interview type', 'Primary interviewer', 'comments'];
  // displayColumnHeader = ['reportname','report' ,'datasetname', 'comments'];

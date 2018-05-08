@@ -52,7 +52,7 @@ export let reportTableData = [{
 
 
 export let dataTableData = [{
-  ListType: 'ENF',
+  ListType: 'data',
   InsuranceID: "10598489700",
   MedicaidID: "3662946630",
   SSN: "529287966",
@@ -66,7 +66,7 @@ export let dataTableData = [{
   Comments: ""
 },
 {
-  ListType: 'FNS',
+  ListType: 'data1',
   InsuranceID: "10598489700",
   MedicaidID: "3662946630",
   SSN: "529287966",
