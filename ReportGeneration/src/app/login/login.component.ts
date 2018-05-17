@@ -18,17 +18,21 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   loginData():void{
-    this.auth.login(this.logindata.username, this.logindata.password);
-    debugger;
-    // let logincheckdata=this.reportsdataserviceService.checkvalidLogin(this.logindata)
-    // if(logincheckdata.length>0){
-    //   this.router.navigate(['/landingpage']);
-    //   this.isError=false;
-    // }else{
-    //   this.isError=true;
-    // }
-  // 
+   // this.auth.login(this.logindata.username, this.logindata.password);
+    let logincheckdata=this.reportsdataserviceService.checkvalidLogin(this.logindata)
+    if(logincheckdata.length>0){
+      this.router.navigate(['/landingpage']);
+      this.isError=false;
+    }else{
+      this.isError=true;
+    }
+  
   }
+  keyDownFunction(event) {
+  if(event.keyCode == 13) {
+      this.loginData();
+  }
+ }
   valuechange(data){
     Object.getOwnPropertyNames(data).forEach(item=>{
         this.logindata[item]=data[item];
