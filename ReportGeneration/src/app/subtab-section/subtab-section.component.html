@@ -1,0 +1,7 @@
+<div  *ngIf="tabData">
+<ul class="nav nav-tabs">
+  <li  *ngFor="let item of tabData; let i = index" [ngClass]="{'active' : selectedItem==item}" (click)="tablick(item,i==0?true:false)"><a href="javascript:void(0)">{{item}}</a></li>
+</ul>
+  <app-reportstable *ngIf="isreportTable" [indexVal]="selectedItem"></app-reportstable>
+  <app-data-table *ngIf="!isreportTable" [indexVal]="selectedItem"></app-data-table>
+</div>

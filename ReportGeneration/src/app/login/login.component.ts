@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   loginData():void{
-   // this.auth.login(this.logindata.username, this.logindata.password);
+   //this.auth.login(this.logindata.username, this.logindata.password);
     let logincheckdata=this.reportsdataserviceService.checkvalidLogin(this.logindata)
     if(logincheckdata.length>0){
       this.router.navigate(['/landingpage']);
@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
     }else{
       this.isError=true;
     }
-  
   }
   keyDownFunction(event) {
   if(event.keyCode == 13) {

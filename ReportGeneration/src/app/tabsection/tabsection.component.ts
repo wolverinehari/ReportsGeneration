@@ -9,44 +9,23 @@ import { ActivatedRoute } from '@angular/router';
 export class TabsectionComponent implements OnInit {
   isreportTable:boolean=true;
   indexVal:any=0;
-  dataObject:any={
-    indexVal:0
-  }
-  reportTableData:any;
-  selectedreport:any;
   selectedTable:any;
+  selectTabValue:string;
+  selectedDataSet:any;
   constructor(private reportsdataserviceService:ReportsdataserviceService, private route: ActivatedRoute) { }
   ngOnInit() {
-    this.selectedreport = this.route.snapshot.paramMap.get('id');
+    let selectedreport=this.route.snapshot.paramMap.get('id');
     this.reportsdataserviceService.getLandingTable().subscribe(dataobj =>{
-      this.reportTableData=dataobj;
-      this.selectedTable=this.reportTableData.filter(item=>item.report==this.selectedreport)
+      this.selectedTable=dataobj.filter(item=>item.report==selectedreport)
       this.selectedTable=this.selectedTable[0]; 
-      this.indexVal=this.selectedTable.datasetname[0];
+      this.indexVal=Object.keys(this.selectedTable.datasetname);//this.selectedTable.datasetname[0];
+      this.selectTabValue=this.indexVal[0];
+      this.selectedDataSet=this.selectedTable.datasetname[ this.selectTabValue];
     });
   }
-  tablick(id,argindexVal,isreportTable):void{
-    // switch(id+1){
-    //   case 1:
-    //     this.isreportTable=true
-    //     this.indexVal=0;
-    //   break;
-    //   case 2:
-    //     this.isreportTable=false;
-    //     this.indexVal=1;
-    //   break;
-    //   case 3:
-    //     this.isreportTable=false;
-    //     this.indexVal=2;
-    //   break;
-    //   case 4:
-    //     this.isreportTable=false;
-    //     this.indexVal=3;
-    //   break;
-    // }
+  tablick(argindexVal,isreportTable):void{
     this.isreportTable=isreportTable;
-    this.indexVal=argindexVal;
-    this.dataObject.indexVal=this.indexVal;
-    console.log(id,this.isreportTable,this.indexVal)
+    this.selectTabValue=argindexVal;
+    this.selectedDataSet=this.selectedTable.datasetname[ this.selectTabValue];
   }
 }

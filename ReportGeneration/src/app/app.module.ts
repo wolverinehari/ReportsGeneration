@@ -23,6 +23,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { LocaldatasericeService }  from './localdataserice.service';
 import { AuthService } from './auth/auth.service';
 import { DownloadtableService } from './downloadtable.service';
+import { SubtabSectionComponent } from './subtab-section/subtab-section.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { DownloadtableService } from './downloadtable.service';
     HeaderComponent,
     DataTableComponent,
     EditPopupComponent,
-    Dialogcontent
+    Dialogcontent,
+    SubtabSectionComponent
   ],
   imports: [
     BrowserModule,

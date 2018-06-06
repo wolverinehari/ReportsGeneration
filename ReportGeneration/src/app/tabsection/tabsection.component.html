@@ -1,12 +1,13 @@
 <div  *ngIf="selectedTable">
 <ul class="nav nav-tabs">
-  <li  *ngFor="let item of selectedTable.datasetname; let i = index" [ngClass]="{'active' : indexVal==item}" (click)="tablick(i,item,i==0?true:false)"><a href="javascript:void(0)">{{item}}</a></li>
+  <li  *ngFor="let item of indexVal; let i = index" [ngClass]="{'active' : selectTabValue==item}" (click)="tablick(item,i==0?true:false)"><a href="javascript:void(0)">{{item}}</a></li>
   <!--<li [ngClass]="{'active' : indexVal==1}" (click)="tablick(2)"><a href="javascript:void(0)">Option 1</a></li>
   <li [ngClass]="{'active' : indexVal==2}" (click)="tablick(3)"><a href="javascript:void(0)">Option 2</a></li>
   <li [ngClass]="{'active' : indexVal==3}" (click)="tablick(4)"><a href="javascript:void(0)">Option 3</a></li>-->
 </ul>
-  <app-reportstable *ngIf="isreportTable" [indexVal]="indexVal"></app-reportstable>
-  <app-data-table *ngIf="!isreportTable" [indexVal]="indexVal"></app-data-table>
+<app-subtab-section [tabData]='selectedDataSet'></app-subtab-section>
+  <!--<app-reportstable *ngIf="isreportTable" [indexVal]="indexVal"></app-reportstable>
+  <app-data-table *ngIf="!isreportTable" [indexVal]="indexVal"></app-data-table>-->
 </div>
 <!--<app-reportstable *ngIf="isreportTable"></app-reportstable>
 <app-data-table *ngIf="!isreportTable && indexVal==1" [indexVal]="indexVal">{{indexVal}}</app-data-table>

@@ -1,24 +1,24 @@
 export let reportLandingData = [{
   reportname: "Provider Network Adqquacy",
   report: "HSD3",
-  datasetname: ["HSD.HSD_PCP", "HSD.PROVIDER_PROFILE_FINAL"],
+  datasetname: {"tab1":["tab1_HSD.HSD_PCP", "tab1_HSD.PROVIDER_PROFILE_FINAL"],"tab2":["tab2_HSD.HSD_PCP", "tab2_HSD.PROVIDER_PROFILE_FINAL"]},
   Editable: 'N'
 },
 {
   reportname: "Over and Under Utilization",
   report: "HSD40",
-  datasetname: ["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER", "HSD.MEMBER_CLINICAL_CARE_LEVEL", "HSD.QUARTER_PHARMACY_ALL_CLAIMS"],
+  datasetname: {"summary":["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER", "HSD.MEMBER_CLINICAL_CARE_LEVEL", "HSD.QUARTER_PHARMACY_ALL_CLAIMS"],"provider details":["HSD.DME_CLCL_MED_1", "HSD.CLCL_MED_ER_NONER_2", "HSD.MEMBER_CLINICAL_CARE_LEVEL_3"]},
   Editable: 'N'
 }, {
   reportname: "Patient Centered Medical Homes",
   report: "HSD48",
-  datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
-  Editable: 'N'
+   datasetname: {"cumulative":["HSD.DME_CLCL_MED", "HSD.CLCL_MED_ER_NONER"],"provider info":["HSD.DME_CLCL_MED_1", "HSD.MEMBER_CLINICAL_CARE_LEVEL_2"]},
+   Editable: 'N'
 },
 {
   reportname: "Patient Centered Medical Homes",
   report: "HSD70",
-  datasetname: ["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"],
+  datasetname: {"cumulative":["HSD.PMCH_PCP", "HSD.PMCH_CLCL_MED"]},
   Editable: 'N'
 },]
 export let reportTableData = [{
