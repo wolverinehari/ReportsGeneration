@@ -3,5 +3,7 @@
     margin: 40px 0px;
 }
 .landingpage .col-lg-4 .btn-default{
-    padding: 50px
+    padding: 50px;
+    max-width: 300px;
+    white-space: pre-wrap;
 }
