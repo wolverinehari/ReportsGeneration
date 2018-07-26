@@ -24,6 +24,7 @@ import { LocaldatasericeService }  from './localdataserice.service';
 import { AuthService } from './auth/auth.service';
 import { DownloadtableService } from './downloadtable.service';
 import { SubtabSectionComponent } from './subtab-section/subtab-section.component';
+import { SaasCheckComponent } from './saas-check/saas-check.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { SubtabSectionComponent } from './subtab-section/subtab-section.componen
     DataTableComponent,
     EditPopupComponent,
     Dialogcontent,
-    SubtabSectionComponent
+    SubtabSectionComponent,
+    SaasCheckComponent
   ],
   imports: [
     BrowserModule,

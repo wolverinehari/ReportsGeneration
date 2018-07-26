@@ -1,0 +1,84 @@
+    <article class="container">
+      <h1 class=row> Quick Web App  </h1>
+      <div class="row">
+        <p class="col-sm-2 text-right well well-sm">Choose action: </p>
+        <div class="col-sm-2">
+          <select id="selFilter" class="form-control" (change)="onChange($event.target.value)">
+            <option value='V' id="viewPatient" selected="selected">View</option>
+            <option value='M' id="modifyPatient">Modify</option>
+			<option value='A' id="addPatient">Add Patient</option>
+          </select>
+        </div>
+        <button class="btn btn-primary col-sm-2" id="btnRunFilter" (click)="clickHandler()">Run Filter</button>
+
+			<form id='filterForm'>
+			  <br><br><br>
+			  <div id="admDivCheck" *ngIf="admDivCheck">
+			  Facets:<br>
+			  <input type="text" name="facets" id="Facets">
+			  <br><br>
+			  HICN:<br>
+			  <input type="text" name="hicn" id="HICN">
+			  <br><br>
+			  MRN:<br>
+			  <input type="text" name="mrn" id="MRN">
+			  <br><br>
+			  Last Name:<br>
+			  <input type="text" name="lastname" id="Last_Name">
+			  <br><br>
+			  First Name:<br>
+			  <input type="text" name="firstname" id="First_Name">
+			  <br><br>
+			  Birth Date:<br>
+			  <input type="text" name="birth_dt" id="Birth_DT">
+			  <br><br>
+			  Gender:<br>
+			  <input type="text" name="gender" id="Gender">
+			  <br><br>
+			  Language:<br>
+			  <input type="text" name="language" id="Language">
+			  <br><br>
+			  Phone:<br>
+			  <input type="text" name="phone" id="Phone">
+			  <br><br>
+			  Address Line 1:<br>
+			  <input type="text" name="addr1" id="Addr1">
+			  <br><br>
+			  Address Line 2:<br>
+			  <input type="text" name="addr2" id="Addr2">
+			  <br><br>
+			  City:<br>
+			  <input type="text" name="city" id="City">
+			  <br><br>
+			  State:<br>
+			  <input type="text" name="state" id="State">
+			  <br><br>
+			  Zip:<br>
+			  <input type="text" name="zip" id="Zip">
+			  <br><br>
+			  Country:<br>
+			  <input type="text" name="country" id="Country">
+			  <br><br>
+			  Territory:<br>
+			  <input type="text" name="territory" id="Territory">
+			  <br><br>
+			  SUBSA:<br>
+			  <input type="text" name="subsa" id="SUBSA">
+			  <br><br>
+			  GEONAME:<br>
+			  <input type="text" name="geoname" id="GEONAME">
+			  <br><br>
+			  Description:<br>
+			  <input type="text" name="desc" id="DESC">
+			  <br><br>
+			  PCP Group:<br>
+			  <input type="text" name="pcpgroup" id="PCPGROUP">
+			  <br><br>
+			  PCP Name:<br>
+			  <input type="text" name="pcpname" id="PCPNAME">
+			  <br><br>
+			</div>
+			</form>
+        <div class="col-sm-6"><div id=hotContainer></div></div>
+      </div>
+    </article>
