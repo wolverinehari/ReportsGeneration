@@ -25,6 +25,7 @@ import { AuthService } from './auth/auth.service';
 import { DownloadtableService } from './downloadtable.service';
 import { SubtabSectionComponent } from './subtab-section/subtab-section.component';
 import { SaasCheckComponent } from './saas-check/saas-check.component';
+import { FilterPipe} from './filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { SaasCheckComponent } from './saas-check/saas-check.component';
     EditPopupComponent,
     Dialogcontent,
     SubtabSectionComponent,
-    SaasCheckComponent
+    SaasCheckComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,37 @@
-.landingpage .col-lg-4{
+/*.landingpage .col-lg-4{
     text-align: center;
     margin: 40px 0px;
-}
-.landingpage .col-lg-4 .btn-default{
-    padding: 50px;
-    max-width: 300px;
+}*/
+.landingpage .col-sm-6 .btn-default{
     white-space: pre-wrap;
+}
+.landingpage .col-sm-6 table thead>tr>td{
+    font-weight: bold;
+}
+.landingpage h4{
+ text-align: left;
+ margin-left: 15px;
+}
+.fleft{
+    float: left;
+}
+.landingpage .searchPannel label{
+    margin-top: 6px;
+}
+.landingpage .searchPannel #reportNumber{
+    width:30%;
+    margin-left: 15px;
+}
+.landingpage .searchPannel .or-design {
+    margin: 8px 0px 0px 0px;
+    color: #808080;
+    width:50px;
+}
+.landingpage .searchPannel .sorBysection{
+    width: 35%;
+    margin-left: 20px;
+}
+.landingpage .searchPannel .sorBysection select{
+    width: 50%;
+    margin-left: 15px;
 }

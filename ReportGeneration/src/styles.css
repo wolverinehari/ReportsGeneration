@@ -4,7 +4,6 @@
     background-color: white;
     border: 1.5px solid black;
     border-radius: 10px;
-    text-align: center;
 }
 .mat-table {
     position:relative;
@@ -45,4 +44,8 @@
   /*width: 1123px; */
   min-width: 1600px; 
   width:100%;
+}
+body  {
+    background-image: url("https://www.w3schools.com/cssref/paper.gif");
+    background-color: #cccccc;
 }

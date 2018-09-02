@@ -24,7 +24,6 @@ export class SaasCheckComponent implements OnInit {
   }
 
   clickHandler() { 
-    debugger;
     var items = $('#filterForm').serializeArray();
     var expanded = items.map(function (val) {
       return '<' + val.name + '>' + val.value + '</' + val.name + '>';//this.makeXML(val.name, val.value);
