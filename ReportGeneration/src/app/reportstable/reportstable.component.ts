@@ -20,6 +20,7 @@ export class ReportstableComponent implements OnInit {
    this.constantdataService.getTables().subscribe(dataobj =>{
       dataobj; 
       let mergeArray =[]
+      dataobj=dataobj['response'];
       dataobj.forEach(function(item,index){
           mergeArray.push(Object.keys(item).map(key => ({ key, value: item[key] })));
           mergeArray[index].push({key:'Readonly',value:'true','index':index});

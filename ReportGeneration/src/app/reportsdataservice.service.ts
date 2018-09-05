@@ -3,8 +3,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/xml' })
+};
 
 @Injectable()
+
 export class ReportsdataserviceService {
   //allDatatableObject: datatableData[];
   loginData: any;
@@ -13,11 +17,13 @@ export class ReportsdataserviceService {
     password: 'user1',
     action: 'HSD#3,HSD#70'
   }];
+  
   constructor(private http: HttpClient) {
     this.getLoginData();
    }
   getTables(): Observable<any[]> {
     //return this.alltabledataObject;
+    //return this.http.post<any[]>('http://zltstesasweb01.phs.org:7980/SASBIWS/rest/storedProcesses/Web/hsd3_hsd_pcp_try_111/dataTargets/_WEBOUT', '<stp><parameters><selFilter>V</selFilter> </parameters></stp>', httpOptions);
     return this.http.get<any[]>('api/reportTableData')
   }
   getLandingTable(): Observable<any[]> {
