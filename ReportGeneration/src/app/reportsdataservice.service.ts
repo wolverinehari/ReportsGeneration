@@ -30,7 +30,7 @@ export class ReportsdataserviceService {
     let doc = parser.parseFromString(xmlString, "application/xml");
     // this.http.get<any[]>('api/loginContent').subscribe(loginContent => this.loginData = loginContent)
   
-    return this.http.post<any[]>('http://zltstesasweb01.phs.org:7980/SASBIWS/rest/storedProcesses/Web/hsd3_hsd_pcp_try_111/dataTargets/_WEBOUT',doc,httpOptions);
+    return this.http.post<any[]>('http://zltstesasweb01.phs.org:7980/SASBIWS/rest/storedProcesses/Web/hsd3_hsd_pcp_try_111/dataTargets/_WEBOUT',xmlString,httpOptions);
     // return this.http.get<any[]>('api/reportTableData')
   }
   getLandingTable(): Observable<any[]> {
