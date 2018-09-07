@@ -47,10 +47,10 @@ import { FilterPipe} from './filter.pipe';
     FormsModule,
     AppRoutingModule,
     DemoMaterialModule,
-    BrowserAnimationsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      LocaldatasericeService, { dataEncapsulation: false }
+      LocaldatasericeService, { dataEncapsulation: false,passThruUnknownUrl: true }
     )
   ],
   entryComponents: [EditPopupComponent,Dialogcontent],
