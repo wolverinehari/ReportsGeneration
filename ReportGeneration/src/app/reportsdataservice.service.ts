@@ -24,14 +24,9 @@ export class ReportsdataserviceService {
     // this.getTables().subscribe(dataobj =>{console.log(dataobj)})
    }
   getTables(): Observable<any[]> {
-    //return this.alltabledataObject;
-    let parser = new DOMParser();
     let xmlString ='<stp><parameters><selFilter>V</selFilter></parameters></stp>';
-    let doc = parser.parseFromString(xmlString, "application/xml");
-    // this.http.get<any[]>('api/loginContent').subscribe(loginContent => this.loginData = loginContent)
-  
-    return this.http.post<any[]>('http://zltstesasweb01.phs.org:7980/SASBIWS/rest/storedProcesses/Web/hsd3_hsd_pcp_try_111/dataTargets/_WEBOUT',xmlString,httpOptions);
-    // return this.http.get<any[]>('api/reportTableData')
+    // return this.http.post<any[]>('http://zltstesasweb01.phs.org:7980/SASBIWS/rest/storedProcesses/Web/hsd3_hsd_pcp_try_111/dataTargets/_WEBOUT',xmlString,httpOptions);
+    return this.http.get<any[]>('api/reportTableData')
   }
   getLandingTable(): Observable<any[]> {
     //return this.alltabledataObject;

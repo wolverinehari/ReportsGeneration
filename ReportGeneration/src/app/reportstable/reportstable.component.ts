@@ -24,9 +24,11 @@ export class ReportstableComponent implements OnInit {
       dataobj.forEach(function(item,index){
           mergeArray.push(Object.keys(item).map(key => ({ key, value: item[key] })));
           mergeArray[index].push({key:'Readonly',value:'true','index':index});
+           mergeArray[index].push({key:'comments',value:' ','index':index});
       })
       this.displayColumnHeader = Object.keys(dataobj[0]).map(key => (key));
       this.displayColumnHeader.splice(1,0,'Readonly')
+      this.displayColumnHeader.splice((this.displayColumnHeader.length),0,'comments')
       this.dataObject=mergeArray[0];
       this.dataSource = new MatTableDataSource<any>(dataobj);
       this.dataSource.paginator = this.paginator;
