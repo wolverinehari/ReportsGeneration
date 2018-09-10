@@ -14,11 +14,19 @@ export class ReportstableComponent implements OnInit {
   dataObject: any[];
   dataSource:any;
   displayColumnHeader:any[];
+  pageSize:number=1;
+  pageOptions:Array<number>=[];
+  PageNumberList:Array<number>=[0,1,2,3];
+  previousVal:number=0;
   constructor(private constantdataService: ReportsdataserviceService,private DownloadtableService: DownloadtableService) {
    // this.dataObject = constantdataService.getTables();
    // this.dataSource = new MatTableDataSource<tableData>(this.dataObject);
-   this.constantdataService.getTables().subscribe(dataobj =>{
-      dataobj; 
+   this.constantdataService.getTables(this.previousVal).subscribe(dataobj =>{
+      this.setTableData(dataobj)
+    });
+  }
+  setTableData(dataobj){
+     dataobj; 
       let mergeArray =[]
       dataobj=dataobj['response'];
       dataobj.forEach(function(item,index){
@@ -32,12 +40,13 @@ export class ReportstableComponent implements OnInit {
       this.dataObject=mergeArray[0];
       this.dataSource = new MatTableDataSource<any>(dataobj);
       this.dataSource.paginator = this.paginator;
+      this.pageSize=dataobj.length
+      this.pageOptions=[1,2,3]
       let csvHeader:Array<String>=[];
       this.dataObject.forEach((element,index) => {
         csvHeader.push(element.key);
       });
       this.DownloadtableService.setCSVHeader(csvHeader);
-    });
   }
   ngOnInit() {
   }
@@ -48,6 +57,16 @@ export class ReportstableComponent implements OnInit {
     this.DownloadtableService.exportAsExcelFile(this.dataSource.data,this.indexVal+'_reportExcel');
   }
   tableContentStatusChange(data:any){
+  }
+  onChangePage(event):void{
+    const newVal = event.target.value;
+    if(this.previousVal!=newVal){
+       this.previousVal=newVal;
+      this.constantdataService.getTables(this.previousVal).subscribe(dataobj =>{
+        this.setTableData(dataobj)
+      });
+    }
+    
   }
   //displayColumnHeader = ['reportname','readonly','report' ,'datasetname', 'Edit sec'];
   @ViewChild(MatPaginator) paginator: MatPaginator;

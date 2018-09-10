@@ -23,10 +23,17 @@ export class ReportsdataserviceService {
     this.getLoginData();
     // this.getTables().subscribe(dataobj =>{console.log(dataobj)})
    }
-  getTables(): Observable<any[]> {
-    let xmlString ='<stp><parameters><selFilter>V</selFilter></parameters></stp>';
-    // return this.http.post<any[]>('http://zltstesasweb01.phs.org:7980/SASBIWS/rest/storedProcesses/Web/hsd3_hsd_pcp_try_111/dataTargets/_WEBOUT',xmlString,httpOptions);
-    return this.http.get<any[]>('api/reportTableData')
+  getTables(pageNumber): Observable<any[]> {
+    let xmlString,URL;
+    if(pageNumber!=0){
+       xmlString ='<stp><parameters><selFilter>'+pageNumber+'</selFilter></parameters></stp>';
+       URL='http://zltstesasweb01.phs.org:7980/SASBIWS/rest/storedProcesses/Web/HSD3_PROVIDER_PROFILE_FINAL_POC/dataTargets/_WEBOUT'
+    }else{
+       xmlString ='<stp><parameters><selFilter>V</selFilter></parameters></stp>';
+       URL='http://zltstesasweb01.phs.org:7980/SASBIWS/rest/storedProcesses/Web/HSD3_HSD_PCP_POC/dataTargets/_WEBOUT'
+    }
+    return this.http.post<any[]>(URL,xmlString,httpOptions);
+   // return this.http.get<any[]>('api/reportTableData')
   }
   getLandingTable(): Observable<any[]> {
     //return this.alltabledataObject;
