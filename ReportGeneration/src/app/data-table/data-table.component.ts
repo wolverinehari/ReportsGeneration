@@ -13,11 +13,19 @@ export class DataTableComponent implements OnInit {
   dataObject:any[];
   dataSource:any;
   displayColumnHeader:any;
+  pageSize:number=1;
+  pageOptions:Array<number>=[];
+  PageNumberList:Array<number>=[1,2,3,4];
+  previousVal:number=1;
   constructor(private constantdataService: ReportsdataserviceService,private DownloadtableService: DownloadtableService) {
   }
   ngOnInit() {
-    this.constantdataService.getDataTables().subscribe(dataobj =>{
-      let mergeArray =[]
+    this.constantdataService.getDataTables(this.previousVal).subscribe(dataobj =>{
+       this.setTableData(dataobj)
+    }); 
+  }
+  setTableData(dataobj){
+    let mergeArray =[]
       dataobj.forEach(function(item,index){
           mergeArray.push(Object.keys(item).map(key => ({ key, value: item[key] })));
       })
@@ -30,13 +38,22 @@ export class DataTableComponent implements OnInit {
         csvHeader.push(element.key);
       });
       this.DownloadtableService.setCSVHeader(csvHeader);
-    }); 
   }
   downloadCSV(){
     this.DownloadtableService.downloadCSV(this.dataSource.data,this.indexVal+'_dataTableCSV')
   }
   downloadExcel(){
     this.DownloadtableService.exportAsExcelFile(this.dataSource.data,this.indexVal+'_dataTableExcel');
+  }
+  onChangePage(event):void{
+    let newVal = event.target.value;
+    if(this.previousVal!=newVal){
+       this.previousVal=newVal;
+       this.constantdataService.getTables(this.previousVal).subscribe(dataobj =>{
+        this.setTableData(dataobj)
+      });
+    }
+    
   }
  // displayColumnHeader = ['id','Interview date', 'Interview time', 'Interview type', 'Primary interviewer', 'comments'];
  // displayColumnHeader = ['reportname','report' ,'datasetname', 'comments'];

@@ -16,8 +16,8 @@ export class ReportstableComponent implements OnInit {
   displayColumnHeader:any[];
   pageSize:number=1;
   pageOptions:Array<number>=[];
-  PageNumberList:Array<number>=[0,1,2,3];
-  previousVal:number=0;
+  PageNumberList:Array<number>=[1,2,3,4];
+  previousVal:number=1;
   constructor(private constantdataService: ReportsdataserviceService,private DownloadtableService: DownloadtableService) {
    // this.dataObject = constantdataService.getTables();
    // this.dataSource = new MatTableDataSource<tableData>(this.dataObject);
@@ -59,10 +59,10 @@ export class ReportstableComponent implements OnInit {
   tableContentStatusChange(data:any){
   }
   onChangePage(event):void{
-    const newVal = event.target.value;
+    let newVal = event.target.value;
     if(this.previousVal!=newVal){
        this.previousVal=newVal;
-      this.constantdataService.getTables(this.previousVal).subscribe(dataobj =>{
+       this.constantdataService.getTables(this.previousVal).subscribe(dataobj =>{
         this.setTableData(dataobj)
       });
     }

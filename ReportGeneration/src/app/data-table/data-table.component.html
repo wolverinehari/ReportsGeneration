@@ -27,8 +27,18 @@
         <mat-header-row *matHeaderRowDef="displayColumnHeader"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayColumnHeader;"></mat-row>
       </mat-table>
-      <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
-      </mat-paginator>
+      <!--<mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+      </mat-paginator>-->
+       <div class="row ">
+        <div class="col-md-offset-6 col-md-2 form-group">
+          <label for="sel1">Select Page#:</label>
+        </div>
+        <div class="col-md-3 form-group">
+          <select class="form-control" id="sel1" (change)="onChangePage($event)">
+            <option *ngFor="let pageNumber of PageNumberList" >{{pageNumber}}</option>
+         </select>
+        </div>
+      </div>
     </div>
   </div>
 </div>
