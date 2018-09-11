@@ -26,6 +26,7 @@ export class DataTableComponent implements OnInit {
   }
   setTableData(dataobj){
     let mergeArray =[]
+      dataobj=dataobj['response'];
       dataobj.forEach(function(item,index){
           mergeArray.push(Object.keys(item).map(key => ({ key, value: item[key] })));
       })
