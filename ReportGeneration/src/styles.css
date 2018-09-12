@@ -49,3 +49,9 @@ body  {
     background-image: url("https://www.w3schools.com/cssref/paper.gif");
     background-color: #cccccc;
 }
+mat-header-cell:first-child{
+  min-width: 185px;
+}
+.marginLeft5{
+    margin-left: 5px;
+}

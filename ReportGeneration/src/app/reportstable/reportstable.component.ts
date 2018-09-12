@@ -32,11 +32,11 @@ export class ReportstableComponent implements OnInit {
       dataobj.forEach(function(item,index){
           mergeArray.push(Object.keys(item).map(key => ({ key, value: item[key] })));
           mergeArray[index].push({key:'Readonly',value:'true','index':index});
-           mergeArray[index].push({key:'comments',value:' ','index':index});
+          //  mergeArray[index].push({key:'comments',value:' ','index':index});
       })
       this.displayColumnHeader = Object.keys(dataobj[0]).map(key => (key));
       this.displayColumnHeader.splice(1,0,'Readonly')
-      this.displayColumnHeader.splice((this.displayColumnHeader.length),0,'comments')
+      // this.displayColumnHeader.splice((this.displayColumnHeader.length),0,'comments')
       this.dataObject=mergeArray[0];
       this.dataSource = new MatTableDataSource<any>(dataobj);
       this.dataSource.paginator = this.paginator;
@@ -51,10 +51,18 @@ export class ReportstableComponent implements OnInit {
   ngOnInit() {
   }
   downloadCSV(){
-    this.DownloadtableService.downloadCSV(this.dataSource.data,this.indexVal+'_reportCSV')
+    this.constantdataService.getReportCSVExcelData().subscribe(dataobj =>{
+        dataobj=dataobj['response'];
+        this.DownloadtableService.downloadCSV(dataobj,this.indexVal+'_reportCSV')
+    });
+    // this.DownloadtableService.downloadCSV(this.dataSource.data,this.indexVal+'_reportCSV')
   }
   downloadExcel(){
-    this.DownloadtableService.exportAsExcelFile(this.dataSource.data,this.indexVal+'_reportExcel');
+    this.constantdataService.getReportCSVExcelData().subscribe(dataobj =>{
+        dataobj=dataobj['response'];
+        this.DownloadtableService.exportAsExcelFile(dataobj,this.indexVal+'_reportExcel');
+    });
+    // this.DownloadtableService.exportAsExcelFile(this.dataSource.data,this.indexVal+'_reportExcel');
   }
   tableContentStatusChange(data:any){
   }

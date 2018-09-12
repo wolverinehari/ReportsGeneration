@@ -50,7 +50,7 @@ export class DataTableComponent implements OnInit {
     let newVal = event.target.value;
     if(this.previousVal!=newVal){
        this.previousVal=newVal;
-       this.constantdataService.getTables(this.previousVal).subscribe(dataobj =>{
+       this.constantdataService.getDataTables(this.previousVal).subscribe(dataobj =>{
         this.setTableData(dataobj)
       });
     }

@@ -28,7 +28,7 @@ export class ReportsdataserviceService {
     xmlString = '<stp><parameters><selFilter>' + pageNumber + '</selFilter></parameters></stp>';
     URL = 'http://zltstesasweb01.phs.org:7980/SASBIWS/rest/storedProcesses/Web/HSD3_HSD_PCP_POC/dataTargets/_WEBOUT'
     return this.http.post<any[]>(URL, xmlString, httpOptions);
-    // return this.http.get<any[]>('api/reportTableData')
+    //  return this.http.get<any[]>('api/reportTableData')
   }
   getLandingTable(): Observable<any[]> {
     //return this.alltabledataObject;
@@ -36,6 +36,12 @@ export class ReportsdataserviceService {
   }
   getLoginData(): void {
     this.http.get<any[]>('api/loginContent').subscribe(loginContent => this.loginData = loginContent)
+  }
+  getReportCSVExcelData():Observable<any[]>{
+    let xmlString, URL;
+    xmlString = '<stp><parameters><selFilter>V</selFilter></parameters></stp>';
+    URL = 'http://zltstesasweb01.phs.org:7980/SASBIWS/rest/storedProcesses/Web/Mukesh_app/dataTargets/_WEBOUT'
+    return this.http.post<any[]>(URL, xmlString, httpOptions);
   }
   getDataTables(pageNumber): Observable<any[]> {
     let xmlString, URL;
